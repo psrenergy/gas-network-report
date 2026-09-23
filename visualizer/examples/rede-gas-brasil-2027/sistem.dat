@@ -1,0 +1,6 @@
+$version=2
+!Code,Name,Id,Currency
+1,SUDESTE,se,$
+2,NORDESTE,ne,$
+3,NORTE,no,$
+4,SUL,su,$

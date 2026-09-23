@@ -1,0 +1,450 @@
+$version=1
+key,type,code,name,associated_key
+CV-ACU,PSRFixedConverter,5,Regaseificacao Acu,
+CV-BAR,PSRFixedConverter,8,Regaseificacao Barcarena,
+CV-BG,PSRFixedConverter,1,Regaseificacao B. Guanabara,
+CV-PEC,PSRFixedConverter,3,Regaseificacao Pecem,
+CV-SE,PSRFixedConverter,4,Regaseificacao Sergipe,
+CV-SUAPE,PSRFixedConverter,9,Regaseificacao Suape,
+CV-TGS,PSRFixedConverter,7,Regaseificacao Babitonga (TGS),
+CV-TRBA,PSRFixedConverter,2,Regaseificacao Bahia,
+CV-TRSP,PSRFixedConverter,6,Regaseificacao Santos,
+D-BHZ-N1,PSRElectrificationDemand,13,RM Belo Horizonte  nivel 1 (inelastico),
+D-BHZ-N2,PSRElectrificationDemand,14,RM Belo Horizonte  nivel 2 (elastico),
+D-CAC-N1,PSRElectrificationDemand,16,Linhares (Cacimbas)  nivel 1 (inelastico),
+D-CAM-N1,PSRElectrificationDemand,19,polo de Camacari  nivel 1 (inelastico),
+D-CAM-N2,PSRElectrificationDemand,20,polo de Camacari  nivel 2 (elastico),
+D-CAN-N1,PSRElectrificationDemand,31,Canoas / RM Porto Alegre  nivel 1 (inelastico),
+D-CAN-N2,PSRElectrificationDemand,32,Canoas / RM Porto Alegre  nivel 2 (elastico),
+D-CARM-N1,PSRElectrificationDemand,21,Carmopolis  nivel 1 (inelastico),
+D-CATU-N1,PSRElectrificationDemand,18,Catu  nivel 1 (inelastico),
+D-CBA-N1,PSRElectrificationDemand,17,Cuiaba  nivel 1 (inelastico),
+D-CGR-N1,PSRElectrificationDemand,1,Campo Grande  nivel 1 (inelastico),
+D-CPV-N1,PSRElectrificationDemand,4,RM Sao Paulo (Capuava)  nivel 1 (inelastico),
+D-CPV-N2,PSRElectrificationDemand,5,RM Sao Paulo (Capuava)  nivel 2 (elastico),
+D-CWB-N1,PSRElectrificationDemand,27,RM Curitiba (Araucaria)  nivel 1 (inelastico),
+D-CWB-N2,PSRElectrificationDemand,28,RM Curitiba (Araucaria)  nivel 2 (elastico),
+D-FLN-N1,PSRElectrificationDemand,29,Grande Florianopolis  nivel 1 (inelastico),
+D-FLN-N2,PSRElectrificationDemand,30,Grande Florianopolis  nivel 2 (elastico),
+D-FOR-N1,PSRElectrificationDemand,26,Fortaleza  nivel 1 (inelastico),
+D-GASLUB-N1,PSRElectrificationDemand,12,polo Itaborai (GasLub)  nivel 1 (inelastico),
+D-GMR-N1,PSRElectrificationDemand,25,Guamare / RN  nivel 1 (inelastico),
+D-JAP-N1,PSRElectrificationDemand,9,Japeri  nivel 1 (inelastico),
+D-MAO-N1,PSRElectrificationDemand,33,Manaus  nivel 1 (inelastico),
+D-PIL-N1,PSRElectrificationDemand,22,Pilar  nivel 1 (inelastico),
+D-PLN-N1,PSRElectrificationDemand,3,Paulinia e interior SP  nivel 1 (inelastico),
+D-REDUC-N1,PSRElectrificationDemand,10,REDUC / Duque de Caxias  nivel 1 (inelastico),
+D-REDUC-N2,PSRElectrificationDemand,11,REDUC / Duque de Caxias  nivel 2 (elastico),
+D-RPBC-N1,PSRElectrificationDemand,6,Cubatao / baixada santista  nivel 1 (inelastico),
+D-SUAPE-N1,PSRElectrificationDemand,23,Cabo / Suape  nivel 1 (inelastico),
+D-SUAPE-N2,PSRElectrificationDemand,24,Cabo / Suape  nivel 2 (elastico),
+D-TAU-N1,PSRElectrificationDemand,7,Vale do Paraiba  nivel 1 (inelastico),
+D-TLS-N1,PSRElectrificationDemand,2,Tres Lagoas  nivel 1 (inelastico),
+D-VIX-N1,PSRElectrificationDemand,15,Grande Vitoria  nivel 1 (inelastico),
+D-VRD-N1,PSRElectrificationDemand,8,Volta Redonda  nivel 1 (inelastico),
+Disbursement,PSRExpansionDisbursement,,0,
+GNL-ACU,PSRElectrificationNode,45,Tanque FSRU Acu,
+GNL-BAR,PSRElectrificationNode,48,Tanque FSRU Barcarena,
+GNL-BG,PSRElectrificationNode,41,Tanque FSRU Baia de Guanabara,
+GNL-MKT,PSRElectrificationNode,58,Mercado internacional de GNL (bacia Atlantica),
+GNL-PEC,PSRElectrificationNode,43,Tanque FSRU Pecem,
+GNL-SE,PSRElectrificationNode,44,Tanque FSRU Sergipe,
+GNL-SUAPE,PSRElectrificationNode,59,Tanque FSRU Suape,
+GNL-TGS,PSRElectrificationNode,47,Tanque FSRU Babitonga (TGS),
+GNL-TRBA,PSRElectrificationNode,42,Tanque FSRU Bahia,
+GNL-TRSP,PSRElectrificationNode,46,Tanque FSRU Santos,
+L-GASBOL,PSRElectrificationStorage,9,Linepack GASBOL,
+L-GASENE,PSRElectrificationStorage,10,Linepack GASENE,
+L-NE,PSRElectrificationStorage,12,Linepack malha NE,
+L-NTS,PSRElectrificationStorage,11,Linepack corredor RJSP,
+ND-ACU,PSRElectrificationNode,17,Porto do Acu (lado GN),
+ND-ARG-LIB,PSRElectrificationNode,57,Paso de los Libres (Argentina)  TSB,
+ND-ARG-NOA,PSRElectrificationNode,56,Campo Duran (Argentina)  exportacao p/ Bolivia,
+ND-BAR,PSRElectrificationNode,40,Barcarena (lado GN),
+ND-BCOQ,PSRElectrificationNode,24,Terminal GNL Sergipe (lado GN),
+ND-BHZ,PSRElectrificationNode,49,Belo Horizonte / Betim,
+ND-BOL-RGD,PSRElectrificationNode,55,Rio Grande (Bolivia)  cabeceira do GASBOL,
+ND-CAC,PSRElectrificationNode,19,UTGC Cacimbas,
+ND-CAM,PSRElectrificationNode,21,Camacari,
+ND-CAN,PSRElectrificationNode,34,Canoas,
+ND-CARM,PSRElectrificationNode,23,Carmopolis / Atalaia,
+ND-CATU,PSRElectrificationNode,20,Catu,
+ND-CBA,PSRElectrificationNode,30,Cuiaba,
+ND-CGR,PSRElectrificationNode,2,Campo Grande,
+ND-COA,PSRElectrificationNode,37,Coari,
+ND-COR,PSRElectrificationNode,1,EMED Corumba,
+ND-CPV,PSRElectrificationNode,6,Capuava / RGE-SP,
+ND-CWB,PSRElectrificationNode,31,Araucaria,
+ND-FLN,PSRElectrificationNode,33,Biguacu / Florianopolis,
+ND-FOR,PSRElectrificationNode,28,Fortaleza (Mucuripe),
+ND-GARUVA,PSRElectrificationNode,61,Garuva,
+ND-GASLUB,PSRElectrificationNode,15,UPGN Itaborai (Boaventura),
+ND-GMR,PSRElectrificationNode,27,Polo Guamare,
+ND-GUA,PSRElectrificationNode,5,Guararema,
+ND-JAP,PSRElectrificationNode,12,Japeri,
+ND-JDF,PSRElectrificationNode,60,Juiz de Fora,
+ND-MAO,PSRElectrificationNode,38,Manaus,
+ND-PEC,PSRElectrificationNode,29,Pecem (lado GN),
+ND-PIL,PSRElectrificationNode,25,Pilar,
+ND-PLN,PSRElectrificationNode,4,Paulinia (Replan),
+ND-PRN,PSRElectrificationNode,39,Complexo Parnaiba,
+ND-REDUC,PSRElectrificationNode,13,REDUC / Duque de Caxias,
+ND-RPBC,PSRElectrificationNode,7,Cubatao (RPBC),
+ND-SEPETIBA,PSRElectrificationNode,63,Sepetiba / Itaguai,
+ND-SFS,PSRElectrificationNode,32,S. Francisco do Sul (lado GN),
+ND-STARITA,PSRElectrificationNode,62,Santa Rita / Joao Pessoa,
+ND-SUAPE,PSRElectrificationNode,26,Cabo / Suape,
+ND-TAU,PSRElectrificationNode,10,Taubate,
+ND-TBGUA,PSRElectrificationNode,14,Terminal GNL B. Guanabara (lado GN),
+ND-TECAB,PSRElectrificationNode,16,TECAB Cabiunas,
+ND-TLS,PSRElectrificationNode,3,Tres Lagoas,
+ND-TRBA,PSRElectrificationNode,22,Terminal GNL Bahia (lado GN),
+ND-TRSP,PSRElectrificationNode,8,Terminal GNL Santos (lado GN),
+ND-URG,PSRElectrificationNode,35,Uruguaiana,
+ND-URU,PSRElectrificationNode,36,Polo Urucu,
+ND-UTGCA,PSRElectrificationNode,9,UTGCA Caraguatatuba,
+ND-VIX,PSRElectrificationNode,18,Vitoria / Serra,
+ND-VRD,PSRElectrificationNode,11,Volta Redonda,
+NL-GASBOL,PSRElectrificationNode,51,Linepack GASBOL (T. LagoasPaulinia),
+NL-GASENE,PSRElectrificationNode,52,Linepack GASENE (CacimbasCatu),
+NL-NE,PSRElectrificationNode,54,Linepack malha NE (CarmopolisPilar),
+NL-NTS,PSRElectrificationNode,53,Linepack corredor RJSP (JaperiGuararema),
+P-ARG,PSRElectrificationFuelProducer,11,Exportacao Argentina p/ Bolivia (Campo Duran),
+P-ARG-TSB,PSRElectrificationFuelProducer,14,Exportacao Argentina p/ TSB (Paso de los Libres),
+P-BA,PSRElectrificationFuelProducer,6,Producao Bahia (Manati + Reconcavo),
+P-BIO-JAP,PSRElectrificationFuelProducer,23,Biometano  cluster Japeri (RJ),
+P-BIO-PLN,PSRElectrificationFuelProducer,24,Biometano  cluster interior SP (Paulinia),
+P-BMC33,PSRElectrificationFuelProducer,4,BM-C-33 / Raia (Cabiunas),
+P-BOL,PSRElectrificationFuelProducer,10,Producao Bolivia (Rio Grande),
+P-ES,PSRElectrificationFuelProducer,5,Producao capixaba (Cacimbas),
+P-GNL-ACU,PSRElectrificationFuelProducer,19,GNL firme DES  Acu,
+P-GNL-BAR,PSRElectrificationFuelProducer,22,GNL firme DES  Barcarena,
+P-GNL-BG,PSRElectrificationFuelProducer,15,GNL firme DES  B. Guanabara,
+P-GNL-PEC,PSRElectrificationFuelProducer,17,GNL firme DES  Pecem,
+P-GNL-SE,PSRElectrificationFuelProducer,18,GNL firme DES  Sergipe,
+P-GNL-SPOT,PSRElectrificationFuelProducer,25,GNL spot  mercado internacional,
+P-GNL-SUAPE,PSRElectrificationFuelProducer,26,GNL firme DES  Suape,
+P-GNL-TGS,PSRElectrificationFuelProducer,21,GNL firme DES  Babitonga (TGS),
+P-GNL-TRBA,PSRElectrificationFuelProducer,16,GNL firme DES  Bahia,
+P-GNL-TRSP,PSRElectrificationFuelProducer,20,GNL firme DES  Santos,
+P-PRN,PSRElectrificationFuelProducer,13,Producao Parnaiba,
+P-RN,PSRElectrificationFuelProducer,9,Producao RN (Guamare),
+P-ROTA1,PSRElectrificationFuelProducer,1,Rota 1  pre-sal Santos (UTGCA),
+P-ROTA2,PSRElectrificationFuelProducer,2,Rota 2  pre-sal (Cabiunas),
+P-ROTA3,PSRElectrificationFuelProducer,3,Rota 3  pre-sal (Boaventura),
+P-SEAL,PSRElectrificationFuelProducer,7,Producao onshore SE/AL (Carmopolis),
+P-SEAP,PSRElectrificationFuelProducer,8,SEAP  Sergipe Aguas Profundas,
+P-URUCU,PSRElectrificationFuelProducer,12,Producao Urucu,
+Supply Chain DemandSegment 1,PSRElectrificationDemandSegment,1,,D-CGR-N1
+Supply Chain DemandSegment 1 (1),PSRElectrificationDemandSegment,1,,D-TLS-N1
+Supply Chain DemandSegment 1 (10),PSRElectrificationDemandSegment,1,,D-REDUC-N2
+Supply Chain DemandSegment 1 (100),PSRElectrificationDemandSegment,1,,UTE-PILAR NOVA
+Supply Chain DemandSegment 1 (101),PSRElectrificationDemandSegment,1,,UTE-PILAR V
+Supply Chain DemandSegment 1 (102),PSRElectrificationDemandSegment,1,,UTE-PROSPERI III
+Supply Chain DemandSegment 1 (103),PSRElectrificationDemandSegment,1,,UTE-PROSPERI IV
+Supply Chain DemandSegment 1 (104),PSRElectrificationDemandSegment,1,,UTE-PROSPERID II
+Supply Chain DemandSegment 1 (105),PSRElectrificationDemandSegment,1,,UTE-PROSPERID IV
+Supply Chain DemandSegment 1 (106),PSRElectrificationDemandSegment,1,,UTE-PROSPERIDADE
+Supply Chain DemandSegment 1 (107),PSRElectrificationDemandSegment,1,,UTE-SFE GUARANI
+Supply Chain DemandSegment 1 (108),PSRElectrificationDemandSegment,1,,UTE-SUAPE IV B
+Supply Chain DemandSegment 1 (109),PSRElectrificationDemandSegment,1,,UTE-TERMOBAHIA
+Supply Chain DemandSegment 1 (11),PSRElectrificationDemandSegment,1,,D-GASLUB-N1
+Supply Chain DemandSegment 1 (110),PSRElectrificationDemandSegment,1,,UTE-TERMOCEARA
+Supply Chain DemandSegment 1 (111),PSRElectrificationDemandSegment,1,,UTE-TERMONE II
+Supply Chain DemandSegment 1 (112),PSRElectrificationDemandSegment,1,,UTE-TERMOPE
+Supply Chain DemandSegment 1 (113),PSRElectrificationDemandSegment,1,,UTE-VALE DO ACU
+Supply Chain DemandSegment 1 (114),PSRElectrificationDemandSegment,1,,UTE-MFUJI_2LRC
+Supply Chain DemandSegment 1 (115),PSRElectrificationDemandSegment,1,,UTE-SERGI_5_2LRC
+Supply Chain DemandSegment 1 (116),PSRElectrificationDemandSegment,1,,UTE-APARECIDA
+Supply Chain DemandSegment 1 (117),PSRElectrificationDemandSegment,1,,UTE-JARAQUI
+Supply Chain DemandSegment 1 (118),PSRElectrificationDemandSegment,1,,UTE-MANAUS I
+Supply Chain DemandSegment 1 (119),PSRElectrificationDemandSegment,1,,UTE-MARANHAO III
+Supply Chain DemandSegment 1 (12),PSRElectrificationDemandSegment,1,,D-BHZ-N1
+Supply Chain DemandSegment 1 (120),PSRElectrificationDemandSegment,1,,UTE-MARANHAO IV
+Supply Chain DemandSegment 1 (121),PSRElectrificationDemandSegment,1,,UTE-MARANHAO V
+Supply Chain DemandSegment 1 (122),PSRElectrificationDemandSegment,1,,UTE-MAUA 3
+Supply Chain DemandSegment 1 (123),PSRElectrificationDemandSegment,1,,UTE-N.VENECIA 2
+Supply Chain DemandSegment 1 (124),PSRElectrificationDemandSegment,1,,UTE-NT BARCAR II
+Supply Chain DemandSegment 1 (125),PSRElectrificationDemandSegment,1,,UTE-NT BARCARENA
+Supply Chain DemandSegment 1 (126),PSRElectrificationDemandSegment,1,,UTE-PARNAIBA IV
+Supply Chain DemandSegment 1 (127),PSRElectrificationDemandSegment,1,,UTE-PARNAIBA V
+Supply Chain DemandSegment 1 (128),PSRElectrificationDemandSegment,1,,UTE-PIRARUCU
+Supply Chain DemandSegment 1 (129),PSRElectrificationDemandSegment,1,,UTE-PORTOCEM I
+Supply Chain DemandSegment 1 (13),PSRElectrificationDemandSegment,1,,D-BHZ-N2
+Supply Chain DemandSegment 1 (130),PSRElectrificationDemandSegment,1,,UTE-TUCUNARE
+Supply Chain DemandSegment 1 (131),PSRElectrificationDemandSegment,1,,UTE-MARAN V 2LRC
+Supply Chain DemandSegment 1 (132),PSRElectrificationDemandSegment,1,,UTE-MARAN 4 2LRC
+Supply Chain DemandSegment 1 (133),PSRElectrificationDemandSegment,1,,UTE-SCLARA_2LRC
+Supply Chain DemandSegment 1 (14),PSRElectrificationDemandSegment,1,,D-VIX-N1
+Supply Chain DemandSegment 1 (15),PSRElectrificationDemandSegment,1,,D-CAC-N1
+Supply Chain DemandSegment 1 (16),PSRElectrificationDemandSegment,1,,D-CBA-N1
+Supply Chain DemandSegment 1 (17),PSRElectrificationDemandSegment,1,,D-CATU-N1
+Supply Chain DemandSegment 1 (18),PSRElectrificationDemandSegment,1,,D-CAM-N1
+Supply Chain DemandSegment 1 (19),PSRElectrificationDemandSegment,1,,D-CAM-N2
+Supply Chain DemandSegment 1 (2),PSRElectrificationDemandSegment,1,,D-PLN-N1
+Supply Chain DemandSegment 1 (20),PSRElectrificationDemandSegment,1,,D-CARM-N1
+Supply Chain DemandSegment 1 (21),PSRElectrificationDemandSegment,1,,D-PIL-N1
+Supply Chain DemandSegment 1 (22),PSRElectrificationDemandSegment,1,,D-SUAPE-N1
+Supply Chain DemandSegment 1 (23),PSRElectrificationDemandSegment,1,,D-SUAPE-N2
+Supply Chain DemandSegment 1 (24),PSRElectrificationDemandSegment,1,,D-GMR-N1
+Supply Chain DemandSegment 1 (25),PSRElectrificationDemandSegment,1,,D-FOR-N1
+Supply Chain DemandSegment 1 (26),PSRElectrificationDemandSegment,1,,D-CWB-N1
+Supply Chain DemandSegment 1 (27),PSRElectrificationDemandSegment,1,,D-CWB-N2
+Supply Chain DemandSegment 1 (28),PSRElectrificationDemandSegment,1,,D-FLN-N1
+Supply Chain DemandSegment 1 (29),PSRElectrificationDemandSegment,1,,D-FLN-N2
+Supply Chain DemandSegment 1 (3),PSRElectrificationDemandSegment,1,,D-CPV-N1
+Supply Chain DemandSegment 1 (30),PSRElectrificationDemandSegment,1,,D-CAN-N1
+Supply Chain DemandSegment 1 (31),PSRElectrificationDemandSegment,1,,D-CAN-N2
+Supply Chain DemandSegment 1 (32),PSRElectrificationDemandSegment,1,,D-MAO-N1
+Supply Chain DemandSegment 1 (33),PSRElectrificationDemandSegment,1,,UTE-BAIXADA FLU
+Supply Chain DemandSegment 1 (34),PSRElectrificationDemandSegment,1,,UTE-CAMPO GRANDE
+Supply Chain DemandSegment 1 (35),PSRElectrificationDemandSegment,1,,UTE-CELPAV IV
+Supply Chain DemandSegment 1 (36),PSRElectrificationDemandSegment,1,,UTE-CUBATAO
+Supply Chain DemandSegment 1 (37),PSRElectrificationDemandSegment,1,,UTE-CUIABA G CC
+Supply Chain DemandSegment 1 (38),PSRElectrificationDemandSegment,1,,UTE-GDE CUIABA
+Supply Chain DemandSegment 1 (39),PSRElectrificationDemandSegment,1,,UTE-GNA I
+Supply Chain DemandSegment 1 (4),PSRElectrificationDemandSegment,1,,D-CPV-N2
+Supply Chain DemandSegment 1 (40),PSRElectrificationDemandSegment,1,,UTE-GNA II
+Supply Chain DemandSegment 1 (41),PSRElectrificationDemandSegment,1,,UTE-IBIRITE
+Supply Chain DemandSegment 1 (42),PSRElectrificationDemandSegment,1,,UTE-JUIZ DE FORA
+Supply Chain DemandSegment 1 (43),PSRElectrificationDemandSegment,1,,UTE-LINHARES
+Supply Chain DemandSegment 1 (44),PSRElectrificationDemandSegment,1,,UTE-LORM 2LRC
+Supply Chain DemandSegment 1 (45),PSRElectrificationDemandSegment,1,,UTE-MARLIM AZUL
+Supply Chain DemandSegment 1 (46),PSRElectrificationDemandSegment,1,,UTE-N.PIRATINING
+Supply Chain DemandSegment 1 (47),PSRElectrificationDemandSegment,1,,UTE-NORTEFLU
+Supply Chain DemandSegment 1 (48),PSRElectrificationDemandSegment,1,,UTE-NORTEFLU IC
+Supply Chain DemandSegment 1 (49),PSRElectrificationDemandSegment,1,,UTE-NORTEFLU ID
+Supply Chain DemandSegment 1 (5),PSRElectrificationDemandSegment,1,,D-RPBC-N1
+Supply Chain DemandSegment 1 (50),PSRElectrificationDemandSegment,1,,UTE-NOVA ERA
+Supply Chain DemandSegment 1 (51),PSRElectrificationDemandSegment,1,,UTE-PAULINIA VER
+Supply Chain DemandSegment 1 (52),PSRElectrificationDemandSegment,1,,UTE-POVOACAO 1
+Supply Chain DemandSegment 1 (53),PSRElectrificationDemandSegment,1,,UTE-SAO MATEUS 1
+Supply Chain DemandSegment 1 (54),PSRElectrificationDemandSegment,1,,UTE-SAO MATEUS 2
+Supply Chain DemandSegment 1 (55),PSRElectrificationDemandSegment,1,,UTE-SEROPEDICA
+Supply Chain DemandSegment 1 (56),PSRElectrificationDemandSegment,1,,UTE-STC NOVA LRC
+Supply Chain DemandSegment 1 (57),PSRElectrificationDemandSegment,1,,UTE-TERMOMACAE
+Supply Chain DemandSegment 1 (58),PSRElectrificationDemandSegment,1,,UTE-TERMORIO
+Supply Chain DemandSegment 1 (59),PSRElectrificationDemandSegment,1,,UTE-TRES LAGOAS
+Supply Chain DemandSegment 1 (6),PSRElectrificationDemandSegment,1,,D-TAU-N1
+Supply Chain DemandSegment 1 (60),PSRElectrificationDemandSegment,1,,UTE-TUPAN
+Supply Chain DemandSegment 1 (61),PSRElectrificationDemandSegment,1,,UTE-VIANA 1
+Supply Chain DemandSegment 1 (62),PSRElectrificationDemandSegment,1,,UTE-W. ARJONA
+Supply Chain DemandSegment 1 (63),PSRElectrificationDemandSegment,1,,UTE-W. ARJONA II
+Supply Chain DemandSegment 1 (64),PSRElectrificationDemandSegment,1,,UTE-T LAG 2LRC
+Supply Chain DemandSegment 1 (65),PSRElectrificationDemandSegment,1,,UTE-TMAC 2LRC
+Supply Chain DemandSegment 1 (66),PSRElectrificationDemandSegment,1,,UTE-PNFLU2C_2LRC
+Supply Chain DemandSegment 1 (67),PSRElectrificationDemandSegment,1,,UTE-PNFLUB_2LRC
+Supply Chain DemandSegment 1 (68),PSRElectrificationDemandSegment,1,,UTE-ARAUCARIA
+Supply Chain DemandSegment 1 (69),PSRElectrificationDemandSegment,1,,UTE-ARAUCARIA II
+Supply Chain DemandSegment 1 (7),PSRElectrificationDemandSegment,1,,D-VRD-N1
+Supply Chain DemandSegment 1 (70),PSRElectrificationDemandSegment,1,,UTE-B. BONITA I
+Supply Chain DemandSegment 1 (71),PSRElectrificationDemandSegment,1,,UTE-TROMBUDO
+Supply Chain DemandSegment 1 (72),PSRElectrificationDemandSegment,1,,UTE-TROMBUDO II
+Supply Chain DemandSegment 1 (73),PSRElectrificationDemandSegment,1,,UTE-URUGUAIANA
+Supply Chain DemandSegment 1 (74),PSRElectrificationDemandSegment,1,,UTE-ARAUCA 2LRC
+Supply Chain DemandSegment 1 (75),PSRElectrificationDemandSegment,1,,UTE-URUG 2LRC
+Supply Chain DemandSegment 1 (76),PSRElectrificationDemandSegment,1,,UTE-GARUVA_2LRC
+Supply Chain DemandSegment 1 (77),PSRElectrificationDemandSegment,1,,UTE-APOENA V2
+Supply Chain DemandSegment 1 (78),PSRElectrificationDemandSegment,1,,UTE-BIRIBEIRA I
+Supply Chain DemandSegment 1 (79),PSRElectrificationDemandSegment,1,,UTE-CORCOVADO 03
+Supply Chain DemandSegment 1 (8),PSRElectrificationDemandSegment,1,,D-JAP-N1
+Supply Chain DemandSegment 1 (80),PSRElectrificationDemandSegment,1,,UTE-CORCOVADO 04
+Supply Chain DemandSegment 1 (81),PSRElectrificationDemandSegment,1,,UTE-CORCOVADO 05
+Supply Chain DemandSegment 1 (82),PSRElectrificationDemandSegment,1,,UTE-CORCOVADO 06
+Supply Chain DemandSegment 1 (83),PSRElectrificationDemandSegment,1,,UTE-FREVO
+Supply Chain DemandSegment 1 (84),PSRElectrificationDemandSegment,1,,UTE-JANDAIA II
+Supply Chain DemandSegment 1 (85),PSRElectrificationDemandSegment,1,,UTE-JANDAIA III
+Supply Chain DemandSegment 1 (86),PSRElectrificationDemandSegment,1,,UTE-JOAO PESSOA
+Supply Chain DemandSegment 1 (87),PSRElectrificationDemandSegment,1,,UTE-MANGUABA I
+Supply Chain DemandSegment 1 (88),PSRElectrificationDemandSegment,1,,UTE-MANGUABA II
+Supply Chain DemandSegment 1 (89),PSRElectrificationDemandSegment,1,,UTE-MANGUABA III
+Supply Chain DemandSegment 1 (9),PSRElectrificationDemandSegment,1,,D-REDUC-N1
+Supply Chain DemandSegment 1 (90),PSRElectrificationDemandSegment,1,,UTE-MANGUABA IV
+Supply Chain DemandSegment 1 (91),PSRElectrificationDemandSegment,1,,UTE-MANGUABA V
+Supply Chain DemandSegment 1 (92),PSRElectrificationDemandSegment,1,,UTE-P. SERGIPE 2
+Supply Chain DemandSegment 1 (93),PSRElectrificationDemandSegment,1,,UTE-P. SERGIPE 3
+Supply Chain DemandSegment 1 (94),PSRElectrificationDemandSegment,1,,UTE-P. SERGIPE 5
+Supply Chain DemandSegment 1 (95),PSRElectrificationDemandSegment,1,,UTE-PILAR
+Supply Chain DemandSegment 1 (96),PSRElectrificationDemandSegment,1,,UTE-PILAR I
+Supply Chain DemandSegment 1 (97),PSRElectrificationDemandSegment,1,,UTE-PILAR II
+Supply Chain DemandSegment 1 (98),PSRElectrificationDemandSegment,1,,UTE-PILAR III
+Supply Chain DemandSegment 1 (99),PSRElectrificationDemandSegment,1,,UTE-PILAR IV
+Supply Chain Fixed Converter Commodity (C1 N14),PSRFixedConverterCommodity,,(C1 N14),
+Supply Chain Fixed Converter Commodity (C1 N41),PSRFixedConverterCommodity,,(C1 N41),
+Supply Chain Fixed Converter Commodity (C2 N22),PSRFixedConverterCommodity,,(C2 N22),
+Supply Chain Fixed Converter Commodity (C2 N42),PSRFixedConverterCommodity,,(C2 N42),
+Supply Chain Fixed Converter Commodity (C3 N29),PSRFixedConverterCommodity,,(C3 N29),
+Supply Chain Fixed Converter Commodity (C3 N43),PSRFixedConverterCommodity,,(C3 N43),
+Supply Chain Fixed Converter Commodity (C4 N24),PSRFixedConverterCommodity,,(C4 N24),
+Supply Chain Fixed Converter Commodity (C4 N44),PSRFixedConverterCommodity,,(C4 N44),
+Supply Chain Fixed Converter Commodity (C5 N17),PSRFixedConverterCommodity,,(C5 N17),
+Supply Chain Fixed Converter Commodity (C5 N45),PSRFixedConverterCommodity,,(C5 N45),
+Supply Chain Fixed Converter Commodity (C6 N46),PSRFixedConverterCommodity,,(C6 N46),
+Supply Chain Fixed Converter Commodity (C6 N8),PSRFixedConverterCommodity,,(C6 N8),
+Supply Chain Fixed Converter Commodity (C7 N32),PSRFixedConverterCommodity,,(C7 N32),
+Supply Chain Fixed Converter Commodity (C7 N47),PSRFixedConverterCommodity,,(C7 N47),
+Supply Chain Fixed Converter Commodity (C8 N40),PSRFixedConverterCommodity,,(C8 N40),
+Supply Chain Fixed Converter Commodity (C8 N48),PSRFixedConverterCommodity,,(C8 N48),
+Supply Chain Fixed Converter Commodity (C9 N26),PSRFixedConverterCommodity,,(C9 N26),
+Supply Chain Fixed Converter Commodity (C9 N59),PSRFixedConverterCommodity,,(C9 N59),
+Supply Chain Process GN [1],PSRElectrificationProcess,1,GN,
+Supply Chain Process GNL [2],PSRElectrificationProcess,2,GNL,
+System NORDESTE [2],PSRSystem,2,NORDESTE,
+System NORTE [3],PSRSystem,3,NORTE,
+System SUDESTE [1],PSRSystem,1,SUDESTE,
+System SUL [4],PSRSystem,4,SUL,
+TD-01,PSRElectrificationTransport,1,GASBOL I (CorumbaC. Grande),
+TD-02,PSRElectrificationTransport,2,GASBOL II (C. GrandeT. Lagoas),
+TD-03,PSRElectrificationTransport,3,GASBOL III-a (T. Lagoaslinepack),
+TD-04,PSRElectrificationTransport,4,GASBOL IV (PauliniaAraucaria),
+TD-05-1,PSRElectrificationTransport,54,GASBOL V(AraucariaGavura),
+TD-05-2,PSRElectrificationTransport,55,GASBOL V(GaruvaBiguacu),
+TD-06,PSRElectrificationTransport,6,GASBOL VI (BiguacuCanoas),
+TD-07,PSRElectrificationTransport,7,Lateral Cuiaba,
+TD-08,PSRElectrificationTransport,8,Interconexao Paulinia (TBGNTS),
+TD-09,PSRElectrificationTransport,9,GASDUC I+II+III,
+TD-10,PSRElectrificationTransport,10,GASIG (ItaboraiGuapimirim/REDUC),
+TD-11,PSRElectrificationTransport,11,Duto do terminal B. Guanabara,
+TD-12,PSRElectrificationTransport,12,GASJAP (REDUCJaperi),
+TD-13,PSRElectrificationTransport,13,GASVOL (REDUCV. Redonda),
+TD-14,PSRElectrificationTransport,14,GASPAL I-a (Japerilinepack),
+TD-15,PSRElectrificationTransport,15,GASPAL II (GuararemaCapuava),
+TD-16,PSRElectrificationTransport,16,GASAN (CapuavaRPBC),
+TD-17,PSRElectrificationTransport,17,Duto TRSP (SantosCapuava),
+TD-18,PSRElectrificationTransport,18,GASCAR (UTGCATaubate),
+TD-19,PSRElectrificationTransport,19,GASTAU (TaubateGuararema),
+TD-20-1,PSRElectrificationTransport,52,GASBEL REDUC-ESMAN,
+TD-20-2,PSRElectrificationTransport,53,ESMAN-REGAP,
+TD-21,PSRElectrificationTransport,21,GASCAV (CabiunasVitoria),
+TD-22,PSRElectrificationTransport,22,VitoriaCacimbas,
+TD-23,PSRElectrificationTransport,23,GASCAC-a (Cacimbaslinepack),
+TD-24,PSRElectrificationTransport,24,CatuCamacari (spur),
+TD-25,PSRElectrificationTransport,25,Duto do terminal Bahia,
+TD-26,PSRElectrificationTransport,26,CatuCarmopolis/Atalaia,
+TD-27,PSRElectrificationTransport,27,Duto do terminal Sergipe,
+TD-28,PSRElectrificationTransport,28,Carmopolislinepack NE,
+TD-29,PSRElectrificationTransport,29,PilarCabo (Suape),
+TD-30-1,PSRElectrificationTransport,56,Nordestao (CaboSantaRita),
+TD-30-2,PSRElectrificationTransport,57,Nordestao (SantaRitaGuamare),
+TD-31,PSRElectrificationTransport,31,GASFOR (GuamareFortaleza),
+TD-32,PSRElectrificationTransport,32,FortalezaPecem (spur),
+TD-33,PSRElectrificationTransport,33,UrucuCoari,
+TD-34,PSRElectrificationTransport,34,CoariManaus,
+TD-35,PSRElectrificationTransport,35,TSB (Paso de los LibresUruguaiana),
+TD-36,PSRElectrificationTransport,36,Gasinf (AcuItaborai),
+TD-37,PSRElectrificationTransport,37,GASBOL III-b (linepackPaulinia),
+TD-38,PSRElectrificationTransport,38,GASCAC-b (linepackCatu),
+TD-39,PSRElectrificationTransport,39,GASPAL I-b (linepackGuararema),
+TD-40,PSRElectrificationTransport,40,Linepack NEPilar,
+TD-41,PSRElectrificationTransport,41,GASBOL trecho boliviano (Rio GrandeCorumba),
+TD-42,PSRElectrificationTransport,42,Reversao ARGBOL (Campo DuranRio Grande),
+TD-43,PSRElectrificationTransport,43,Rota maritima GNL  AtlanticoB. Guanabara,
+TD-44,PSRElectrificationTransport,44,Rota maritima GNL  AtlanticoBahia,
+TD-45,PSRElectrificationTransport,45,Rota maritima GNL  AtlanticoPecem,
+TD-46,PSRElectrificationTransport,46,Rota maritima GNL  AtlanticoSergipe,
+TD-47,PSRElectrificationTransport,47,Rota maritima GNL  AtlanticoAcu,
+TD-48,PSRElectrificationTransport,48,Rota maritima GNL  AtlanticoSantos,
+TD-49,PSRElectrificationTransport,49,Rota maritima GNL  AtlanticoBabitonga (TGS),
+TD-50,PSRElectrificationTransport,50,Rota maritima GNL  AtlanticoBarcarena,
+TD-51,PSRElectrificationTransport,51,Rota maritima GNL  AtlanticoSuape,
+UTE-APARECIDA,PSRElectrificationDemand,117,APARECIDA,
+UTE-APOENA V2,PSRElectrificationDemand,78,APOENA V2,
+UTE-ARAUCA 2LRC,PSRElectrificationDemand,75,ARAUCA 2LRC,
+UTE-ARAUCARIA,PSRElectrificationDemand,69,ARAUCARIA,
+UTE-ARAUCARIA II,PSRElectrificationDemand,70,ARAUCARIA II,
+UTE-B. BONITA I,PSRElectrificationDemand,71,B. BONITA I,
+UTE-BAIXADA FLU,PSRElectrificationDemand,34,BAIXADA FLU,
+UTE-BIRIBEIRA I,PSRElectrificationDemand,79,BIRIBEIRA I,
+UTE-CAMPO GRANDE,PSRElectrificationDemand,35,CAMPO GRANDE,
+UTE-CELPAV IV,PSRElectrificationDemand,36,CELPAV IV,
+UTE-CORCOVADO 03,PSRElectrificationDemand,80,CORCOVADO 03,
+UTE-CORCOVADO 04,PSRElectrificationDemand,81,CORCOVADO 04,
+UTE-CORCOVADO 05,PSRElectrificationDemand,82,CORCOVADO 05,
+UTE-CORCOVADO 06,PSRElectrificationDemand,83,CORCOVADO 06,
+UTE-CUBATAO,PSRElectrificationDemand,37,CUBATAO,
+UTE-CUIABA G CC,PSRElectrificationDemand,38,CUIABA G CC,
+UTE-FREVO,PSRElectrificationDemand,84,FREVO,
+UTE-GARUVA_2LRC,PSRElectrificationDemand,77,GARUVA_2LRC,
+UTE-GDE CUIABA,PSRElectrificationDemand,39,GDE CUIABA,
+UTE-GNA I,PSRElectrificationDemand,40,GNA I,
+UTE-GNA II,PSRElectrificationDemand,41,GNA II,
+UTE-IBIRITE,PSRElectrificationDemand,42,IBIRITE,
+UTE-JANDAIA II,PSRElectrificationDemand,85,JANDAIA II,
+UTE-JANDAIA III,PSRElectrificationDemand,86,JANDAIA III,
+UTE-JARAQUI,PSRElectrificationDemand,118,JARAQUI,
+UTE-JOAO PESSOA,PSRElectrificationDemand,87,JOAO PESSOA,
+UTE-JUIZ DE FORA,PSRElectrificationDemand,43,JUIZ DE FORA,
+UTE-LINHARES,PSRElectrificationDemand,44,LINHARES,
+UTE-LORM 2LRC,PSRElectrificationDemand,45,LORM 2LRC,
+UTE-MANAUS I,PSRElectrificationDemand,119,MANAUS I,
+UTE-MANGUABA I,PSRElectrificationDemand,88,MANGUABA I,
+UTE-MANGUABA II,PSRElectrificationDemand,89,MANGUABA II,
+UTE-MANGUABA III,PSRElectrificationDemand,90,MANGUABA III,
+UTE-MANGUABA IV,PSRElectrificationDemand,91,MANGUABA IV,
+UTE-MANGUABA V,PSRElectrificationDemand,92,MANGUABA V,
+UTE-MARAN 4 2LRC,PSRElectrificationDemand,133,MARAN 4 2LRC,
+UTE-MARAN V 2LRC,PSRElectrificationDemand,132,MARAN V 2LRC,
+UTE-MARANHAO III,PSRElectrificationDemand,120,MARANHAO III,
+UTE-MARANHAO IV,PSRElectrificationDemand,121,MARANHAO IV,
+UTE-MARANHAO V,PSRElectrificationDemand,122,MARANHAO V,
+UTE-MARLIM AZUL,PSRElectrificationDemand,46,MARLIM AZUL,
+UTE-MAUA 3,PSRElectrificationDemand,123,MAUA 3,
+UTE-MFUJI_2LRC,PSRElectrificationDemand,115,MFUJI_2LRC,
+UTE-N.PIRATINING,PSRElectrificationDemand,47,N.PIRATINING,
+UTE-N.VENECIA 2,PSRElectrificationDemand,124,N.VENECIA 2,
+UTE-NORTEFLU,PSRElectrificationDemand,48,NORTEFLU,
+UTE-NORTEFLU IC,PSRElectrificationDemand,49,NORTEFLU IC,
+UTE-NORTEFLU ID,PSRElectrificationDemand,50,NORTEFLU ID,
+UTE-NOVA ERA,PSRElectrificationDemand,51,NOVA ERA,
+UTE-NT BARCAR II,PSRElectrificationDemand,125,NT BARCAR II,
+UTE-NT BARCARENA,PSRElectrificationDemand,126,NT BARCARENA,
+UTE-P. SERGIPE 2,PSRElectrificationDemand,93,P. SERGIPE 2,
+UTE-P. SERGIPE 3,PSRElectrificationDemand,94,P. SERGIPE 3,
+UTE-P. SERGIPE 5,PSRElectrificationDemand,95,P. SERGIPE 5,
+UTE-PARNAIBA IV,PSRElectrificationDemand,127,PARNAIBA IV,
+UTE-PARNAIBA V,PSRElectrificationDemand,128,PARNAIBA V,
+UTE-PAULINIA VER,PSRElectrificationDemand,52,PAULINIA VER,
+UTE-PILAR,PSRElectrificationDemand,96,PILAR,
+UTE-PILAR I,PSRElectrificationDemand,97,PILAR I,
+UTE-PILAR II,PSRElectrificationDemand,98,PILAR II,
+UTE-PILAR III,PSRElectrificationDemand,99,PILAR III,
+UTE-PILAR IV,PSRElectrificationDemand,100,PILAR IV,
+UTE-PILAR NOVA,PSRElectrificationDemand,101,PILAR NOVA,
+UTE-PILAR V,PSRElectrificationDemand,102,PILAR V,
+UTE-PIRARUCU,PSRElectrificationDemand,129,PIRARUCU,
+UTE-PNFLU2C_2LRC,PSRElectrificationDemand,67,PNFLU2C_2LRC,
+UTE-PNFLUB_2LRC,PSRElectrificationDemand,68,PNFLUB_2LRC,
+UTE-PORTOCEM I,PSRElectrificationDemand,130,PORTOCEM I,
+UTE-POVOACAO 1,PSRElectrificationDemand,53,POVOACAO 1,
+UTE-PROSPERI III,PSRElectrificationDemand,103,PROSPERI III,
+UTE-PROSPERI IV,PSRElectrificationDemand,104,PROSPERI IV,
+UTE-PROSPERID II,PSRElectrificationDemand,105,PROSPERID II,
+UTE-PROSPERID IV,PSRElectrificationDemand,106,PROSPERID IV,
+UTE-PROSPERIDADE,PSRElectrificationDemand,107,PROSPERIDADE,
+UTE-SAO MATEUS 1,PSRElectrificationDemand,54,SAO MATEUS 1,
+UTE-SAO MATEUS 2,PSRElectrificationDemand,55,SAO MATEUS 2,
+UTE-SCLARA_2LRC,PSRElectrificationDemand,134,SCLARA_2LRC,
+UTE-SERGI_5_2LRC,PSRElectrificationDemand,116,SERGI_5_2LRC,
+UTE-SEROPEDICA,PSRElectrificationDemand,56,SEROPEDICA,
+UTE-SFE GUARANI,PSRElectrificationDemand,108,SFE GUARANI,
+UTE-STC NOVA LRC,PSRElectrificationDemand,57,STC NOVA LRC,
+UTE-SUAPE IV B,PSRElectrificationDemand,109,SUAPE IV B,
+UTE-T LAG 2LRC,PSRElectrificationDemand,65,T LAG 2LRC,
+UTE-TERMOBAHIA,PSRElectrificationDemand,110,TERMOBAHIA,
+UTE-TERMOCEARA,PSRElectrificationDemand,111,TERMOCEARA,
+UTE-TERMOMACAE,PSRElectrificationDemand,58,TERMOMACAE,
+UTE-TERMONE II,PSRElectrificationDemand,112,TERMONE II,
+UTE-TERMOPE,PSRElectrificationDemand,113,TERMOPE,
+UTE-TERMORIO,PSRElectrificationDemand,59,TERMORIO,
+UTE-TMAC 2LRC,PSRElectrificationDemand,66,TMAC 2LRC,
+UTE-TRES LAGOAS,PSRElectrificationDemand,60,TRES LAGOAS,
+UTE-TROMBUDO,PSRElectrificationDemand,72,TROMBUDO,
+UTE-TROMBUDO II,PSRElectrificationDemand,73,TROMBUDO II,
+UTE-TUCUNARE,PSRElectrificationDemand,131,TUCUNARE,
+UTE-TUPAN,PSRElectrificationDemand,61,TUPAN,
+UTE-URUG 2LRC,PSRElectrificationDemand,76,URUG 2LRC,
+UTE-URUGUAIANA,PSRElectrificationDemand,74,URUGUAIANA,
+UTE-VALE DO ACU,PSRElectrificationDemand,114,VALE DO ACU,
+UTE-VIANA 1,PSRElectrificationDemand,62,VIANA 1,
+UTE-W. ARJONA,PSRElectrificationDemand,63,W. ARJONA,
+UTE-W. ARJONA II,PSRElectrificationDemand,64,W. ARJONA II,

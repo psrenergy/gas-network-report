@@ -1,0 +1,4 @@
+$version=2
+!Num,Name,Commodity,Node,Type,MinStorage,MaxStorage,IniStorage,Capacity,ChargeEff,DischargeEff,StorageType,ChargeRamp,DischargeRamp
+9,Linepack GASBOL,1,51,0,0,12000,0.6,420,1,1,0,-1,-1
+11,Linepack corredor RJSP,1,53,0,0,2500,0.6,120,1,1,0,-1,-1

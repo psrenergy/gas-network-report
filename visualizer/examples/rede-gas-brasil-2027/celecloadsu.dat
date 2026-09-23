@@ -1,0 +1,17 @@
+$version=1
+!Code,Name,Commodity,Node,Segto,Elast,SourceType
+27,RM Curitiba (Araucaria)  nivel 1 (inelastico),1,31,1,0,3
+28,RM Curitiba (Araucaria)  nivel 2 (elastico),1,31,1,1,3
+69,ARAUCARIA,1,31,1,0,3
+70,ARAUCARIA II,1,31,1,0,3
+71,B. BONITA I,1,31,1,0,3
+75,ARAUCA 2LRC,1,31,1,0,3
+77,GARUVA_2LRC,1,31,1,0,3
+29,Grande Florianopolis  nivel 1 (inelastico),1,33,1,0,3
+30,Grande Florianopolis  nivel 2 (elastico),1,33,1,1,3
+72,TROMBUDO,1,33,1,0,3
+73,TROMBUDO II,1,33,1,0,3
+31,Canoas / RM Porto Alegre  nivel 1 (inelastico),1,34,1,0,3
+32,Canoas / RM Porto Alegre  nivel 2 (elastico),1,34,1,1,3
+74,URUGUAIANA,1,35,1,0,3
+76,URUG 2LRC,1,35,1,0,3

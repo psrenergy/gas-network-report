@@ -1,0 +1,4 @@
+$version=1
+!Code,Name,Process,Node,Existing,MinProd [Unit/day],MaxProd [Unit/day], ProdCost[$/Unit)
+14,Exportacao Argentina p/ TSB (Paso de los Libres),1,57,,0,2500,260
+21,GNL firme DES  Babitonga (TGS),2,47,,0,3000,430

@@ -1,0 +1,25 @@
+# ---- SDDP run artefacts (not read by the viewer) ----
+# The viewer only needs the case inputs (*.dat) and result tables (*.csv).
+*.lp
+*.log
+*.out
+*.ok
+*.fdb
+*.bin
+*.hdr
+*.grf
+*.info
+*.cinf
+timeseries.db
+SDDP.html
+psrplot/
+energy_map/
+sddp excel files/
+
+# ---- local tooling / OS ----
+.claude/settings.local.json
+Thumbs.db
+desktop.ini
+.DS_Store
+*.tmp
+~$*

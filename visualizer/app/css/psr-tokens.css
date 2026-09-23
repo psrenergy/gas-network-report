@@ -1,0 +1,157 @@
+:root {
+  /* PSR Design System tokens (colors_and_type.css) — do not edit here, edit the design system */
+  /* ==========================================================
+     BRAND PRIMARIES — from the PSR Manual §4 Cores Institucionais
+     ========================================================== */
+  --psr-azul-escuro:  #122945;  /* navy, primary dark */
+  --psr-verde-escuro: #163F55;  /* deep teal/navy variant */
+  --psr-dourado:      #AB9671;  /* gold */
+  --psr-cinza-escuro: #706F6F;  /* dark gray (manual lists R92 G104 B109 → approximates #5C686D too; keeping hex from manual) */
+
+  /* SUPPORTING — PSR Manual */
+  --psr-verde-claro:  #26828C;  /* teal — primary interactive accent */
+  --psr-azul-claro:   #7FCAD2;  /* light teal / sky */
+  --psr-dourado-claro:#C3B191;  /* light gold */
+  --psr-preto:        #1D1D1B;  /* brand black (not pure #000) */
+
+  /* ==========================================================
+     SEMANTIC ALIASES — used across the psr.edu web platform.
+     These mirror shared/style.css tokens 1:1 so the design
+     system and the app never drift.
+     ========================================================== */
+  --navy:         var(--psr-azul-escuro);
+  --navy-light:   #1a3a5f;
+
+  --teal:         var(--psr-verde-claro);
+  --teal-dark:    #1e6a72;
+  --teal-subtle:  #eff7f8;
+  --teal-mid:     #b8dfe3;
+
+  --amber:        var(--psr-dourado);   /* "dourado" reads as amber in app */
+  --amber-subtle: #f7f3ec;
+  --amber-mid:    #e0d5bf;
+
+  --blue-subtle:  #eff6ff;
+  --blue-mid:     #a8cdd4;
+
+  /* Surface stack */
+  --bg:           #f9fafb;
+  --surface:      #ffffff;
+  --border:       #e5e7eb;
+  --border-light: #f3f4f6;
+  --text:         #111827;
+  --muted:        #6b7280;
+  --muted-light:  #9ca3af;
+
+  /* Functional */
+  --energy:       #15803d;
+  --energy-subtle:#f0fdf4;
+  --energy-mid:   #86efac;
+  --red:          #dc2626;
+  --red-subtle:   #fee2e2;
+  --red-mid:      #fca5a5;
+
+  /* Code blocks */
+  --code-bg:      #1f2937;
+  --code-text:    #e2e8f0;
+
+  /* ==========================================================
+     PRODUCT COLORS — PSR software logo palette
+     Source: "Guia de Cores · Logotipos Softwares"
+     ========================================================== */
+  --product-vermelho-1: #D51F2F;  /* NetPlan, SDDP */
+  --product-vermelho-2: #E8494C;  /* NCP, OptGen */
+  --product-dourado:    #A49375;  /* OptValue, OptFolio */
+  --product-azul:       #2BB3E8;  /* E-PSR, PSR Cloud */
+  --product-verde:      #8BBE45;  /* TSL, Hera, HyCo */
+
+  /* ==========================================================
+     TYPOGRAPHY
+     Brand manual §5: Montserrat (primary), Open Sans (secondary).
+     The psr.edu web app currently uses Inter (UI) + Lora (serif body)
+     + JetBrains Mono (code). Both stacks are exposed here so designers
+     can pick the correct one per surface:
+
+       - Institutional / marketing / slides  → Montserrat + Open Sans
+       - Web app product UI (psr.edu)        → Inter + Lora + JetBrains Mono
+
+     Use the --font-display / --font-ui aliases whenever possible.
+     ========================================================== */
+
+  /* Raw stacks */
+  --font-montserrat: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-open-sans:  'Open Sans', system-ui, -apple-system, sans-serif;
+  --font-inter:      'Inter', system-ui, -apple-system, sans-serif;
+  --font-lora:       'Lora', Georgia, 'Times New Roman', serif;
+  --font-mono:       'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Role aliases — the platform uses these */
+  --font-display:    var(--font-montserrat); /* brand display / headlines */
+  --font-body-long:  var(--font-open-sans);  /* long-form body, reports */
+  --font-ui:         var(--font-inter);      /* app UI chrome */
+  --font-body-web:   var(--font-lora);       /* psr.edu course body */
+  --font-code:       var(--font-mono);
+
+  /* Weight scale */
+  --weight-thin:       100;
+  --weight-extralight: 200;
+  --weight-light:      300;
+  --weight-regular:    400;
+  --weight-medium:     500;
+  --weight-semibold:   600;
+  --weight-bold:       700;
+  --weight-extrabold:  800;
+  --weight-black:      900;
+
+  /* Type scale (rem, 1rem = 16px) */
+  --fs-xs:   0.75rem;   /* 12px — micro labels */
+  --fs-sm:   0.875rem;  /* 14px — captions, meta */
+  --fs-base: 1rem;      /* 16px */
+  --fs-md:   1.0625rem; /* 17px — course body */
+  --fs-lg:   1.25rem;   /* 20px */
+  --fs-xl:   1.55rem;   /* 24.8px — h2 */
+  --fs-2xl:  2rem;      /* 32px — h1 */
+  --fs-3xl:  2.75rem;   /* 44px — hero */
+  --fs-4xl:  3.5rem;    /* 56px — marketing hero */
+
+  /* Line heights */
+  --lh-tight: 1.2; /* @kind other */
+  --lh-snug:  1.3; /* @kind other */
+  --lh-base:  1.6; /* @kind other */
+  --lh-loose: 1.8; /* @kind other */
+
+  /* Letter spacing */
+  --ls-tight:   -0.02em;
+  --ls-normal:   0; /* @kind other */
+  --ls-wide:     0.04em;
+  --ls-overline: 0.12em;
+
+  /* ==========================================================
+     SPACING — 4px baseline
+     ========================================================== */
+  --sp-1:  0.25rem;   --sp-2:  0.5rem;
+  --sp-3:  0.75rem;   --sp-4:  1rem;
+  --sp-5:  1.25rem;   --sp-6:  1.5rem;
+  --sp-8:  2rem;      --sp-10: 2.5rem;
+  --sp-12: 3rem;      --sp-16: 4rem;
+
+  /* ==========================================================
+     RADII & SHADOWS
+     ========================================================== */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-2xl: 12px;
+  --radius-pill: 999px;
+
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 32px rgba(15,23,42,0.18);
+  --shadow-teal: 0 4px 12px rgba(38,130,140,0.08);
+
+  /* Nav / layout */
+  --nav-height: 56px;
+  --sidebar-w: 252px;
+}

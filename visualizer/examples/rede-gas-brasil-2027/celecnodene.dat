@@ -1,0 +1,19 @@
+$version=1
+!Code,Name,Process
+20,Catu,1
+21,Camacari,1
+22,Terminal GNL Bahia (lado GN),1
+23,Carmopolis / Atalaia,1
+24,Terminal GNL Sergipe (lado GN),1
+25,Pilar,1
+26,Cabo / Suape,1
+27,Polo Guamare,1
+28,Fortaleza (Mucuripe),1
+29,Pecem (lado GN),1
+52,Linepack GASENE (CacimbasCatu),1
+54,Linepack malha NE (CarmopolisPilar),1
+42,Tanque FSRU Bahia,2
+43,Tanque FSRU Pecem,2
+44,Tanque FSRU Sergipe,2
+59,Tanque FSRU Suape,2
+62,Santa Rita / Joao Pessoa,1

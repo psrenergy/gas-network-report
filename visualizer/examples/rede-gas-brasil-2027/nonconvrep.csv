@@ -1,0 +1,21 @@
+Type, Dimension
+Hydro plants with variable production coefficient                      ,0
+Hydro plants with evaporation variable with the area                   ,0
+Hydro plants with infiltration variable with the storage               ,0
+Hydro plants with non-controllable spillage (penalized)                ,0
+Hydro plants with non-controllable spillage (integer var.)             ,0
+Hydro plants with LGC                                                  ,0
+Thermal plants with commitment                                         ,0
+Thermal combined-cycle plants with optimized operative status          ,0
+Thermal plants with concave specific consumption curve                 ,0
+Fuel contracts with make-up clause                                     ,0
+Fuel contracts with carry forward clause                               ,0
+Generic interpolation constraints                                      ,0
+Flow controllers                                                       ,0
+Multi-fuel thermal plants with exclusive generation                    ,0
+Hydro plants with net head representation (integer var.)               ,0
+Binary generic variables                                               ,0
+Hydro plants with commitment                                           ,0
+Hydro plants with tailwater elevation representation (integer var.)    ,0
+Hydro plants with inertia requirement                                  ,0
+Thermal plants with inertia requirement                                ,0

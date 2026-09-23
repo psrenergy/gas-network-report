@@ -1,0 +1,26 @@
+$version=1
+!dd/mm/yyyy,Code,Name,Process,Node,Existing,MinProd [Unit/day],MaxProd [Unit/day], ProdCost[$/Unit)
+01/01/2026,24,Biometano  cluster interior SP (Paulinia),1,4,0,0,0,320
+01/01/2026,23,Biometano  cluster Japeri (RJ),1,12,0,0,0,320
+01/01/2026,3,Rota 3  pre-sal (Boaventura),1,15,0,0,18000,235
+01/01/2026,4,BM-C-33 / Raia (Cabiunas),1,16,0,0,0,250
+01/01/2026,10,Producao Bolivia (Rio Grande),1,55,0,0,20000,290
+01/01/2026,11,Exportacao Argentina p/ Bolivia (Campo Duran),1,56,0,0,0,265
+01/01/2027,23,Biometano  cluster Japeri (RJ),1,12,0,0,800,320
+01/01/2027,3,Rota 3  pre-sal (Boaventura),1,15,0,0,21000,235
+01/01/2028,24,Biometano  cluster interior SP (Paulinia),1,4,0,0,700,320
+01/01/2028,4,BM-C-33 / Raia (Cabiunas),1,16,0,0,14000,250
+01/01/2028,10,Producao Bolivia (Rio Grande),1,55,0,0,12000,295
+01/01/2028,11,Exportacao Argentina p/ Bolivia (Campo Duran),1,56,0,0,8000,265
+01/01/2031,5,Producao capixaba (Cacimbas),1,19,0,0,4500,265
+01/01/2032,10,Producao Bolivia (Rio Grande),1,55,0,0,6000,300
+01/01/2032,11,Exportacao Argentina p/ Bolivia (Campo Duran),1,56,0,0,12000,260
+01/01/2035,24,Biometano  cluster interior SP (Paulinia),1,4,0,0,2500,310
+01/01/2035,23,Biometano  cluster Japeri (RJ),1,12,0,0,2000,310
+01/01/2036,3,Rota 3  pre-sal (Boaventura),1,15,0,0,18000,240
+01/01/2036,4,BM-C-33 / Raia (Cabiunas),1,16,0,0,10000,255
+01/01/2036,5,Producao capixaba (Cacimbas),1,19,0,0,3000,270
+01/01/2036,10,Producao Bolivia (Rio Grande),1,55,0,0,2000,305
+01/01/2036,11,Exportacao Argentina p/ Bolivia (Campo Duran),1,56,0,0,15000,255
+01/01/2046,3,Rota 3  pre-sal (Boaventura),1,15,0,0,12000,245
+01/01/2046,4,BM-C-33 / Raia (Cabiunas),1,16,0,0,5000,260

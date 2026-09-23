@@ -1,0 +1,5 @@
+$version=1
+!Code,Name,Process,Node,Existing,MinProd [Unit/day],MaxProd [Unit/day], ProdCost[$/Unit)
+12,Producao Urucu,1,36,0,0,6500,200
+13,Producao Parnaiba,1,39,0,0,9000,190
+22,GNL firme DES  Barcarena,2,48,0,0,3000,430

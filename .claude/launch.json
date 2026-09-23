@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "gas-explorer", "runtimeExecutable": "python", "runtimeArgs": ["-m", "http.server", "8765", "--directory", "visualizer/app"], "port": 8765 }
+  ]
+}

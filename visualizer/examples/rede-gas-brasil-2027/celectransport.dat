@@ -1,0 +1,56 @@
+$version=1
+!Code,Name,Process,Existing,NodeFrom,NodeTo,CapFromTo [Unit/day],CapToFrom [Unit/day], CostFromTo[$/Unit], CostToFrom[$/Unit], LossFromTo[p.u.], LossToFrom [p.u.], Currency
+1,GASBOL I (CorumbaC. Grande),1,0,1,2,30000,0,1.5,0,0.002,0,$
+2,GASBOL II (C. GrandeT. Lagoas),1,0,2,3,30000,0,1,0,0.001,0,$
+3,GASBOL III-a (T. Lagoaslinepack),1,0,3,51,30000,0,1,0,0.001,0,$
+37,GASBOL III-b (linepackPaulinia),1,0,51,4,30000,0,1,0,0.001,0,$
+4,GASBOL IV (PauliniaAraucaria),1,0,4,31,12000,0,1.5,0,0.002,0,$
+6,GASBOL VI (BiguacuCanoas),1,0,33,34,2800,0,1.5,0,0.002,0,$
+7,Lateral Cuiaba,1,0,1,30,2800,0,2,0,0.002,0,$
+8,Interconexao Paulinia (TBGNTS),1,0,5,4,15000,10000,0.8,0.8,0.001,0.001,$
+9,GASDUC I+II+III,1,0,16,13,33000,0,1,0,0.001,0,$
+10,GASIG (ItaboraiGuapimirim/REDUC),1,0,15,13,21000,0,0.6,0,0.001,0,$
+11,Duto do terminal B. Guanabara,1,0,14,13,30000,0,0.4,0,0,0,$
+12,GASJAP (REDUCJaperi),1,0,13,12,20000,0,0.6,0,0.001,0,$
+13,GASVOL (REDUCV. Redonda),1,0,13,11,2500,0,0.8,0,0.001,0,$
+14,GASPAL I-a (Japerilinepack),1,0,12,53,12500,8000,0.8,0.8,0.001,0.001,$
+39,GASPAL I-b (linepackGuararema),1,0,53,5,12500,8000,0.8,0.8,0.001,0.001,$
+15,GASPAL II (GuararemaCapuava),1,0,5,6,12500,8000,0.6,0.6,0.001,0.001,$
+16,GASAN (CapuavaRPBC),1,0,6,7,3000,0,0.5,0,0.001,0,$
+17,Duto TRSP (SantosCapuava),1,0,8,6,14000,0,0.5,0,0.001,0,$
+18,GASCAR (UTGCATaubate),1,0,9,10,10000,0,0.7,0,0.001,0,$
+19,GASTAU (TaubateGuararema),1,0,10,5,10000,0,0.5,0,0.001,0,$
+21,GASCAV (CabiunasVitoria),1,0,16,18,20000,10000,1.2,1.2,0.002,0.002,$
+22,VitoriaCacimbas,1,0,18,19,20000,10000,0.6,0.6,0.001,0.001,$
+23,GASCAC-a (Cacimbaslinepack),1,0,19,52,20000,10000,1.5,1.5,0.002,0.002,$
+38,GASCAC-b (linepackCatu),1,0,52,20,20000,10000,1.5,1.5,0.002,0.002,$
+24,CatuCamacari (spur),1,0,20,21,6000,0,0.4,0,0,0,$
+25,Duto do terminal Bahia,1,0,22,20,14000,0,0.4,0,0,0,$
+26,CatuCarmopolis/Atalaia,1,0,20,23,10000,10000,1,1,0.001,0.001,$
+27,Duto do terminal Sergipe,1,0,24,23,21000,0,0.4,0,0,0,$
+28,Carmopolislinepack NE,1,0,23,54,10000,10000,0.6,0.6,0.001,0.001,$
+40,Linepack NEPilar,1,0,54,25,10000,10000,0.6,0.6,0.001,0.001,$
+29,PilarCabo (Suape),1,0,25,26,8000,8000,0.9,0.9,0.001,0.001,$
+31,GASFOR (GuamareFortaleza),1,0,27,28,2400,2400,1.6,1.6,0.002,0.002,$
+32,FortalezaPecem (spur),1,0,28,29,3400,3400,0.5,0.5,0,0,$
+33,UrucuCoari,1,0,36,37,5500,0,1,0,0.001,0,$
+34,CoariManaus,1,0,37,38,5500,0,1.2,0,0.002,0,$
+35,TSB (Paso de los LibresUruguaiana),1,0,57,35,2500,0,0.8,0,0.001,0,$
+36,Gasinf (AcuItaborai),1,1,17,15,10000,0,0.9,0,0.001,0,$
+41,GASBOL trecho boliviano (Rio GrandeCorumba),1,0,55,1,30000,0,2.5,0,0.003,0,$
+42,Reversao ARGBOL (Campo DuranRio Grande),1,1,56,55,8000,0,3,0,0.003,0,$
+43,Rota maritima GNL  AtlanticoB. Guanabara,2,0,58,41,30000,0,55,0,0.002,0,$
+44,Rota maritima GNL  AtlanticoBahia,2,0,58,42,14000,0,52,0,0.002,0,$
+45,Rota maritima GNL  AtlanticoPecem,2,0,58,43,7000,0,45,0,0.002,0,$
+46,Rota maritima GNL  AtlanticoSergipe,2,0,58,44,21000,0,50,0,0.002,0,$
+47,Rota maritima GNL  AtlanticoAcu,2,0,58,45,21000,0,55,0,0.002,0,$
+48,Rota maritima GNL  AtlanticoSantos,2,0,58,46,14000,0,58,0,0.003,0,$
+49,Rota maritima GNL  AtlanticoBabitonga (TGS),2,0,58,47,15000,0,60,0,0.003,0,$
+50,Rota maritima GNL  AtlanticoBarcarena,2,0,58,48,15000,0,48,0,0.002,0,$
+51,Rota maritima GNL  AtlanticoSuape,2,1,58,59,14000,0,47,0,0.002,0,$
+52,GASBEL REDUC-ESMAN,1,0,13,60,4500,0,1.5,0,0.002,0,$
+53,ESMAN-REGAP,1,0,60,49,4500,0,1.5,0,0.002,0,$
+54,GASBOL V(AraucariaGavura),1,0,31,61,6000,0,1.2,0,0.001,0,$
+55,GASBOL V(GaruvaBiguacu),1,0,61,33,6000,0,1.2,0,0.001,0,$
+56,Nordestao (CaboSantaRita),1,0,26,62,4300,4300,1.8,1.8,0.002,0.002,$
+57,Nordestao (SantaRitaGuamare),1,0,62,27,4300,4300,1.8,1.8,0.002,0.002,$

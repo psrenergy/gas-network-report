@@ -1,0 +1,4 @@
+$version=3
+!Code,Name,Unit,DeficitCost
+1,GN,mil m3,2000
+2,GNL,mil m3,2000

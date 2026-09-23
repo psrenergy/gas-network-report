@@ -1,0 +1,3 @@
+$version=1
+!dd/mm/yyyy,Code,Name,Existing,CapacityFactor,MinLevel
+01/01/2028,9,Regaseificacao Suape,0,1,10

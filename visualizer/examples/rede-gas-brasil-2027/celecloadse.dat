@@ -1,0 +1,54 @@
+$version=1
+!Code,Name,Commodity,Node,Segto,Elast,SourceType
+1,Campo Grande  nivel 1 (inelastico),1,2,1,0,3
+35,CAMPO GRANDE,1,2,1,0,3
+63,W. ARJONA,1,2,1,0,3
+64,W. ARJONA II,1,2,1,0,3
+2,Tres Lagoas  nivel 1 (inelastico),1,3,1,0,3
+60,TRES LAGOAS,1,3,1,0,3
+65,T LAG 2LRC,1,3,1,0,3
+3,Paulinia e interior SP  nivel 1 (inelastico),1,4,1,0,3
+52,PAULINIA VER,1,4,1,0,3
+4,RM Sao Paulo (Capuava)  nivel 1 (inelastico),1,6,1,0,3
+5,RM Sao Paulo (Capuava)  nivel 2 (elastico),1,6,1,1,3
+36,CELPAV IV,1,6,1,0,3
+47,N.PIRATINING,1,6,1,0,3
+6,Cubatao / baixada santista  nivel 1 (inelastico),1,7,1,0,3
+37,CUBATAO,1,7,1,0,3
+7,Vale do Paraiba  nivel 1 (inelastico),1,10,1,0,3
+8,Volta Redonda  nivel 1 (inelastico),1,11,1,0,3
+9,Japeri  nivel 1 (inelastico),1,12,1,0,3
+34,BAIXADA FLU,1,12,1,0,3
+56,SEROPEDICA,1,12,1,0,3
+57,STC NOVA LRC,1,12,1,0,3
+10,REDUC / Duque de Caxias  nivel 1 (inelastico),1,13,1,0,3
+11,REDUC / Duque de Caxias  nivel 2 (elastico),1,13,1,1,3
+51,NOVA ERA,1,13,1,0,3
+59,TERMORIO,1,13,1,0,3
+61,TUPAN,1,13,1,0,3
+12,polo Itaborai (GasLub)  nivel 1 (inelastico),1,15,1,0,3
+46,MARLIM AZUL,1,16,1,0,3
+48,NORTEFLU,1,16,1,0,3
+49,NORTEFLU IC,1,16,1,0,3
+50,NORTEFLU ID,1,16,1,0,3
+58,TERMOMACAE,1,16,1,0,3
+66,TMAC 2LRC,1,16,1,0,3
+67,PNFLU2C_2LRC,1,16,1,0,3
+68,PNFLUB_2LRC,1,16,1,0,3
+40,GNA I,1,17,1,0,3
+41,GNA II,1,17,1,0,3
+15,Grande Vitoria  nivel 1 (inelastico),1,18,1,0,3
+62,VIANA 1,1,18,1,0,3
+16,Linhares (Cacimbas)  nivel 1 (inelastico),1,19,1,0,3
+44,LINHARES,1,19,1,0,3
+45,LORM 2LRC,1,19,1,0,3
+53,POVOACAO 1,1,19,1,0,3
+54,SAO MATEUS 1,1,19,1,0,3
+55,SAO MATEUS 2,1,19,1,0,3
+17,Cuiaba  nivel 1 (inelastico),1,30,1,0,3
+38,CUIABA G CC,1,30,1,0,3
+39,GDE CUIABA,1,30,1,0,3
+13,RM Belo Horizonte  nivel 1 (inelastico),1,49,1,0,3
+14,RM Belo Horizonte  nivel 2 (elastico),1,49,1,1,3
+42,IBIRITE,1,49,1,0,3
+43,JUIZ DE FORA,1,49,1,0,3

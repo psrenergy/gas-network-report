@@ -1,0 +1,15 @@
+$version=1
+!Code,Name,Process,Node,Existing,MinProd [Unit/day],MaxProd [Unit/day], ProdCost[$/Unit)
+24,Biometano  cluster interior SP (Paulinia),1,4,1,0,700,320
+1,Rota 1  pre-sal Santos (UTGCA),1,9,0,0,10000,240
+23,Biometano  cluster Japeri (RJ),1,12,1,0,800,320
+3,Rota 3  pre-sal (Boaventura),1,15,0,0,21000,235
+2,Rota 2  pre-sal (Cabiunas),1,16,0,0,15000,240
+4,BM-C-33 / Raia (Cabiunas),1,16,1,0,14000,250
+5,Producao capixaba (Cacimbas),1,19,0,0,6000,260
+10,Producao Bolivia (Rio Grande),1,55,0,0,20000,290
+11,Exportacao Argentina p/ Bolivia (Campo Duran),1,56,1,0,8000,265
+15,GNL firme DES  B. Guanabara,2,41,0,0,6000,430
+19,GNL firme DES  Acu,2,45,0,0,6000,430
+20,GNL firme DES  Santos,2,46,0,0,3000,430
+25,GNL spot  mercado internacional,2,58,0,0,105000,400

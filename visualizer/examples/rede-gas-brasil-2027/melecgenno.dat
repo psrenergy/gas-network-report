@@ -1,0 +1,4 @@
+$version=1
+!dd/mm/yyyy,Code,Name,Process,Node,Existing,MinProd [Unit/day],MaxProd [Unit/day], ProdCost[$/Unit)
+01/01/2036,13,Producao Parnaiba,1,39,0,0,4000,195
+01/01/2046,13,Producao Parnaiba,1,39,0,0,2000,200

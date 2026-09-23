@@ -1,0 +1,4 @@
+$version=2
+!Num,Name,Commodity,Node,Type,MinStorage,MaxStorage,IniStorage,Capacity,ChargeEff,DischargeEff,StorageType,ChargeRamp,DischargeRamp
+10,Linepack GASENE,1,52,0,0,4000,0.6,170,1,1,0,-1,-1
+12,Linepack malha NE,1,54,0,0,1500,0.6,80,1,1,0,-1,-1

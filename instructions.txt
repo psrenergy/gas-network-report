@@ -1,0 +1,1008 @@
+# Plataforma georreferenciada para análise de redes de gasodutos
+
+## 1. Objetivo
+
+Desenvolver uma aplicação web interativa e georreferenciada para **visualização, exploração e análise de dados de entrada e resultados de um modelo energético de balanço de gasodutos**.
+
+A aplicação deve combinar características de:
+
+* sistemas GIS;
+* visualizadores de redes e grafos;
+* dashboards analíticos;
+* ferramentas de análise de resultados de modelos de otimização.
+
+O mapa deve ser o principal elemento de navegação e análise, mas não deve ser tratado apenas como elemento visual. Ele deve funcionar como uma **interface espacial para exploração da topologia, dos dados e dos resultados do modelo**.
+
+A plataforma não precisa ser completamente genérica para qualquer tipo de infraestrutura. O foco deve ser explicitamente a análise de redes de gás, mantendo, entretanto, arquitetura suficientemente modular para acomodar novos tipos de elementos, atributos, resultados e análises no futuro.
+
+---
+
+# 2. Modelo conceitual da rede
+
+A rede é representada por uma topologia do tipo **nós e arcos**.
+
+## 2.1 Nós
+
+Um nó representa uma localização física ou barra de balanço da rede.
+
+Cada nó possui obrigatoriamente:
+
+* identificador único;
+* nome;
+* latitude;
+* longitude;
+* atributos cadastrais;
+* elementos associados.
+
+Um mesmo nó pode possuir **mais de um elemento físico ou comercial associado**.
+
+Exemplos:
+
+* city-gates;
+* térmicas;
+* pontos de recebimento;
+* pontos de entrega;
+* consumidores;
+* produtores;
+* terminais;
+* armazenamento;
+* outros elementos futuramente suportados.
+
+Portanto, é importante distinguir:
+
+**Nó de rede**
+: entidade topológica onde ocorre o balanço.
+
+**Elemento associado ao nó**
+: instalação, ativo ou agente que injeta, retira ou modifica fluxos naquele nó.
+
+Exemplo:
+
+```text
+Nó RJ-05
+ ├─ City-gate Rio
+ ├─ UTE Alpha
+ └─ Consumidor industrial XPTO
+```
+
+O mapa pode representar esses elementos individualmente quando apropriado, mas todos devem permanecer associados ao mesmo nó topológico.
+
+---
+
+## 2.2 Arcos
+
+Os arcos representam os trechos físicos de gasoduto conectando dois nós.
+
+Cada arco deve possuir:
+
+* identificador;
+* nó de origem;
+* nó de destino;
+* geometria georreferenciada do traçado;
+* capacidade;
+* características físicas e operacionais;
+* resultados associados.
+
+O traçado não deve ser representado apenas por uma reta entre coordenadas dos nós.
+
+Quando disponível, deve ser utilizada a **geometria real ou simplificada do gasoduto**, contendo os pontos intermediários do traçado.
+
+A arquitetura deve permitir futuramente a inclusão de:
+
+* gasodutos bidirecionais;
+* capacidade diferenciada por direção;
+* indisponibilidades;
+* expansão de capacidade;
+* dutos candidatos;
+* diferentes estados operacionais.
+
+---
+
+# 3. Dimensões dos dados
+
+Os dados podem possuir múltiplas dimensões.
+
+A interface deve estar preparada para trabalhar com, pelo menos:
+
+* cenário;
+* período;
+* estágio;
+* bloco horário ou intervalo temporal;
+* caso ou estudo;
+* resultado ou variável.
+
+A seleção dessas dimensões deve controlar simultaneamente:
+
+* mapa;
+* gráficos;
+* tabelas;
+* indicadores;
+* tooltips;
+* painel de propriedades.
+
+Exemplo:
+
+```text
+Caso: Base
+Cenário: 37
+Ano: 2032
+Mês: Agosto
+Bloco: 14
+Variável: Fluxo no gasoduto
+```
+
+Ao alterar qualquer uma dessas dimensões, todas as visualizações relevantes devem ser atualizadas de forma coordenada.
+
+---
+
+# 4. Principais análises
+
+## 4.1 Balanço nodal
+
+Para cada nó:
+
+$$
+\sum \text{entradas}
+-
+\sum \text{saídas}
++
+\sum \text{injeções}
+-
+\sum \text{retiradas}
+= 0
+$$
+
+A interface deve permitir compreender rapidamente a composição do balanço.
+
+Ao selecionar um nó, apresentar:
+
+* fluxos chegando ao nó;
+* fluxos saindo do nó;
+* produção/injeção;
+* consumo/retirada;
+* despacho de térmicas;
+* city-gates;
+* eventuais déficits;
+* balanço líquido.
+
+Uma visualização recomendada é um **waterfall chart**, Sankey local ou gráfico de barras horizontais mostrando a decomposição do balanço.
+
+---
+
+# 4.2 Utilização e gargalos dos gasodutos
+
+Para cada gasoduto:
+
+$$
+Utilização = \frac{|Fluxo|}{Capacidade}
+$$
+
+O mapa deve conseguir representar visualmente níveis de utilização.
+
+Exemplo conceitual:
+
+```text
+0–50%       baixa utilização
+50–80%      utilização moderada
+80–95%      utilização elevada
+95–100%     próximo ao limite
+>100%       violação
+```
+
+Os intervalos devem ser configuráveis.
+
+Deve ser possível identificar:
+
+* gasodutos congestionados;
+* gasodutos próximos ao limite;
+* capacidade ociosa;
+* sentido do fluxo;
+* inversão de fluxo;
+* violações de capacidade;
+* gargalos recorrentes.
+
+---
+
+# 4.3 Custos marginais
+
+Cada nó pode possuir um custo marginal associado.
+
+A aplicação deve permitir visualizar:
+
+* custo marginal por nó;
+* diferenças espaciais de custo;
+* evolução temporal;
+* comparação entre nós;
+* relação entre congestionamentos e diferenças de custos marginais.
+
+O custo marginal pode ser representado por:
+
+* cor do nó;
+* heatmap espacial;
+* legenda contínua;
+* gráfico temporal;
+* tabela ordenável.
+
+A escala de cores deve ser coerente entre períodos quando necessário, evitando interpretações equivocadas causadas por reescalonamento automático.
+
+---
+
+# 4.4 Fluxos
+
+O fluxo deve ser representado simultaneamente através de:
+
+* espessura da linha;
+* direção;
+* valor numérico;
+* percentual de utilização.
+
+Quando necessário, utilizar animação discreta ou indicadores direcionais ao longo do gasoduto para comunicar o sentido do fluxo.
+
+Evitar animações excessivas ou decorativas.
+
+---
+
+# 5. Estrutura geral da interface
+
+A interface deve priorizar o mapa.
+
+Layout recomendado:
+
+```text
+┌──────────────────────────────────────────────────────────────┐
+│ Toolbar / caso / cenário / período / variável               │
+├──────────────┬───────────────────────────────┬───────────────┤
+│              │                               │               │
+│ Layers /     │                               │ Properties /  │
+│ Filters      │            MAPA               │ Analytics     │
+│              │                               │               │
+│              │                               │               │
+├──────────────┴───────────────────────────────┴───────────────┤
+│ Painel inferior opcional: tabela / gráfico / série temporal │
+└──────────────────────────────────────────────────────────────┘
+```
+
+O mapa deve ocupar a maior parte da tela.
+
+Painéis laterais devem poder ser:
+
+* redimensionados;
+* recolhidos;
+* expandidos.
+
+O usuário deve conseguir trabalhar praticamente apenas com o mapa quando desejar.
+
+---
+
+# 6. Interações
+
+Interatividade é um requisito central.
+
+## 6.1 Hover
+
+Ao posicionar o cursor sobre um elemento, apresentar informações resumidas sem exigir clique.
+
+### Nó
+
+Exemplo:
+
+```text
+Barra: RJ-05
+Custo marginal: 18.4 US$/MMBtu
+Injeção: 420 kNm³/d
+Retirada: 385 kNm³/d
+Saldo: +35 kNm³/d
+```
+
+### Gasoduto
+
+```text
+Gasoduto: GAS-104
+Fluxo: 3.2 MMm³/d
+Capacidade: 4.0 MMm³/d
+Utilização: 80%
+Sentido: RJ-05 → RJ-08
+```
+
+---
+
+# 6.2 Clique simples
+
+Clique deve selecionar o elemento.
+
+O elemento selecionado deve permanecer destacado.
+
+A seleção abre ou atualiza o painel contextual lateral.
+
+---
+
+# 6.3 Duplo clique
+
+O duplo clique deve executar uma ação de aprofundamento.
+
+### Em nó
+
+* centralizar;
+* aplicar zoom;
+* abrir análise detalhada do nó.
+
+### Em gasoduto
+
+* enquadrar todo o traçado;
+* abrir análise detalhada do gasoduto.
+
+---
+
+# 6.4 Clique com botão direito
+
+O botão direito deve abrir um menu contextual.
+
+Exemplo para nós:
+
+```text
+View details
+Open time series
+Inspect balance
+Compare with...
+Filter network from this node
+Show connected pipelines
+Copy ID
+Center map here
+```
+
+Exemplo para gasodutos:
+
+```text
+View details
+Open time series
+Show capacity usage
+Highlight upstream/downstream network
+Compare with...
+Copy ID
+Zoom to pipeline
+```
+
+---
+
+# 6.5 Multi-seleção
+
+Permitir selecionar vários elementos através de:
+
+* Ctrl/Cmd + clique;
+* seleção retangular;
+* seleção espacial futuramente.
+
+Isso deve possibilitar:
+
+* comparar séries temporais;
+* comparar atributos;
+* filtrar tabelas;
+* calcular estatísticas;
+* criar subconjuntos temporários.
+
+---
+
+# 7. Navegação pela rede
+
+Além da navegação geográfica, permitir exploração topológica.
+
+Ao selecionar um nó:
+
+* destacar gasodutos incidentes;
+* identificar vizinhos;
+* destacar upstream;
+* destacar downstream.
+
+Ações possíveis:
+
+```text
+Highlight upstream
+Highlight downstream
+Show N hops
+Isolate connected component
+Find path between nodes
+```
+
+A ferramenta deve compreender simultaneamente:
+
+* proximidade geográfica;
+* conectividade topológica.
+
+---
+
+# 8. Camadas
+
+A interface deve possuir um Layer Manager.
+
+Exemplo:
+
+```text
+NETWORK
+☑ Nodes
+☑ Pipelines
+☐ Pipeline labels
+
+ASSETS
+☑ City-gates
+☑ Thermal plants
+☐ Consumers
+☐ Production
+
+RESULTS
+☑ Flow
+☐ Capacity utilization
+☐ Marginal cost
+☐ Violations
+
+BACKGROUND
+☑ Administrative boundaries
+☐ Satellite
+☐ Terrain
+```
+
+Cada camada pode possuir configuração própria de:
+
+* visibilidade;
+* transparência;
+* simbologia;
+* labels;
+* escala mínima/máxima de exibição.
+
+---
+
+# 9. Modos de visualização
+
+Separar o conceito de **elemento exibido** do conceito de **variável usada para estilização**.
+
+Exemplo:
+
+```text
+Pipeline color → utilization
+Pipeline width → absolute flow
+Pipeline arrows → flow direction
+Node color → marginal cost
+Node size → demand
+```
+
+O usuário deve conseguir alternar rapidamente entre presets.
+
+Exemplos de presets:
+
+* Network topology;
+* Gas flow;
+* Pipeline congestion;
+* Marginal costs;
+* Nodal balance;
+* Thermal consumption;
+* Violations.
+
+---
+
+# 10. Painel de propriedades
+
+Ao selecionar um elemento, apresentar painel lateral organizado em abas.
+
+Exemplo:
+
+```text
+Overview
+Inputs
+Results
+Time Series
+Connections
+Metadata
+```
+
+Para um nó:
+
+### Overview
+
+* ID;
+* nome;
+* coordenadas;
+* tipo;
+* número de elementos associados.
+
+### Assets
+
+Lista dos elementos vinculados ao nó.
+
+### Results
+
+Resultados no período selecionado.
+
+### Time Series
+
+Evolução temporal das principais variáveis.
+
+### Connections
+
+Gasodutos conectados e nós vizinhos.
+
+---
+
+# 11. Tabelas
+
+A aplicação deve possuir tabelas analíticas integradas ao mapa.
+
+Características:
+
+* ordenação;
+* filtros;
+* busca;
+* pin de colunas;
+* seleção múltipla;
+* exportação CSV;
+* redimensionamento;
+* ocultação de colunas;
+* agrupamento;
+* formatação condicional.
+
+A seleção deve ser sincronizada:
+
+> selecionar uma linha na tabela deve selecionar o elemento no mapa.
+
+E o inverso:
+
+> selecionar um elemento no mapa deve localizar ou filtrar sua linha na tabela.
+
+---
+
+# 12. Gráficos
+
+Gráficos devem ser tratados como ferramenta analítica, não apenas como dashboard.
+
+Suportar pelo menos:
+
+* séries temporais;
+* barras;
+* barras empilhadas;
+* waterfall;
+* histogramas;
+* scatter plots;
+* duração;
+* Sankey local;
+* comparação de cenários.
+
+Ao clicar em um ponto de uma série temporal, o mapa deve poder navegar para aquele período.
+
+---
+
+# 13. Timeline
+
+Quando houver dimensão temporal, utilizar controle dedicado.
+
+Exemplo:
+
+```text
+◀   ▶
+
+Jan ─ Feb ─ Mar ─ Apr ─ May ─ Jun ─ Jul ─ Aug
+
+                     ●
+```
+
+Recursos:
+
+* avançar;
+* retroceder;
+* play;
+* pausa;
+* velocidade de animação;
+* seleção de intervalo.
+
+Durante animação temporal, mapa e gráficos devem permanecer sincronizados.
+
+---
+
+# 14. Filtros
+
+Filtros devem ser cumulativos e facilmente identificáveis.
+
+Exemplos:
+
+* tipo de elemento;
+* região;
+* sistema;
+* capacidade;
+* fluxo;
+* utilização;
+* custo marginal;
+* presença de violação;
+* tecnologia;
+* nome ou ID;
+* cenário;
+* período.
+
+Filtros ativos devem aparecer de maneira visível, preferencialmente como chips removíveis.
+
+---
+
+# 15. Busca
+
+Busca global por:
+
+* ID;
+* nome;
+* gasoduto;
+* nó;
+* ativo;
+* city-gate;
+* térmica.
+
+O resultado da busca deve:
+
+1. localizar o elemento;
+2. centralizar o mapa;
+3. selecioná-lo;
+4. abrir seu painel de propriedades.
+
+---
+
+# 16. Comparação
+
+A plataforma deve permitir comparar:
+
+* dois ou mais elementos;
+* dois períodos;
+* dois cenários;
+* dois casos.
+
+Exemplos:
+
+```text
+Scenario A vs Scenario B
+2028 vs 2035
+Pipeline GAS-12 vs GAS-18
+Node SP-04 vs SP-09
+```
+
+Visualizações possíveis:
+
+* tabela lado a lado;
+* delta absoluto;
+* delta percentual;
+* duas séries;
+* mapa de diferenças.
+
+---
+
+# 17. Legendas
+
+Todas as simbologias quantitativas devem possuir legenda clara.
+
+A legenda deve indicar:
+
+* variável;
+* unidade;
+* escala;
+* intervalos;
+* significado das cores;
+* significado das espessuras.
+
+A legenda deve ser interativa quando aplicável.
+
+Exemplo: clicar em `>95% utilization` pode filtrar ou destacar apenas os gasodutos correspondentes.
+
+---
+
+# 18. Unidades
+
+A aplicação deve possuir tratamento consistente de unidades.
+
+Exemplos:
+
+* m³/d;
+* kNm³/d;
+* MMm³/d;
+* MMBtu;
+* US$/MMBtu;
+* MW;
+* km.
+
+A unidade deve sempre aparecer em:
+
+* tooltips;
+* eixos;
+* legends;
+* tabelas;
+* cards.
+
+Conversão de unidades pode ser adicionada futuramente.
+
+---
+
+# 19. Estado visual
+
+Deve existir distinção clara entre:
+
+* normal;
+* hover;
+* selected;
+* multi-selected;
+* filtered;
+* disabled;
+* highlighted;
+* violation;
+* unavailable.
+
+O usuário nunca deve precisar adivinhar se um elemento está selecionado ou apenas sendo destacado por uma análise.
+
+---
+
+# 20. Performance e escalabilidade
+
+A aplicação deve funcionar bem com redes pequenas e médias e possuir arquitetura preparada para redes significativamente maiores.
+
+Evitar renderização DOM individual de milhares de elementos.
+
+Considerar tecnologias adequadas para renderização geográfica acelerada, como:
+
+* WebGL;
+* vector tiles;
+* GPU layers.
+
+A aplicação deve minimizar recarregamento integral dos dados quando apenas período, cenário ou variável for alterado.
+
+Separar:
+
+```text
+Static network data
+        +
+Dynamic study data
+        +
+Results
+```
+
+A geometria da rede não deve ser recarregada a cada mudança temporal.
+
+---
+
+# 21. Arquitetura conceitual dos dados
+
+Separar pelo menos quatro classes de informação.
+
+## Network
+
+```text
+Nodes
+Pipelines
+Geometry
+Connectivity
+```
+
+## Assets
+
+```text
+City gates
+Thermal plants
+Production points
+Consumers
+Storage
+```
+
+## Study
+
+```text
+Cases
+Scenarios
+Periods
+Blocks
+```
+
+## Results
+
+```text
+NodeResults
+PipelineResults
+AssetResults
+```
+
+Um resultado deve ser identificado conceitualmente por algo semelhante a:
+
+```text
+(element_id, case, scenario, period, block, variable)
+```
+
+---
+
+# 22. Modelo mínimo de dados
+
+## Node
+
+```json
+{
+  "id": "N001",
+  "name": "Betim",
+  "latitude": -19.96,
+  "longitude": -44.19,
+  "region": "MG",
+  "assets": ["CG001", "TP012"]
+}
+```
+
+## Pipeline
+
+```json
+{
+  "id": "P001",
+  "name": "Gasoduto Betim-Brumadinho",
+  "fromNode": "N001",
+  "toNode": "N002",
+  "capacity": 4.5,
+  "geometry": []
+}
+```
+
+## PipelineResult
+
+```json
+{
+  "pipelineId": "P001",
+  "scenario": 12,
+  "period": "2032-08",
+  "block": 4,
+  "flow": 3.9,
+  "capacity": 4.5,
+  "marginalCost": 0.0
+}
+```
+
+## NodeResult
+
+```json
+{
+  "nodeId": "N001",
+  "scenario": 12,
+  "period": "2032-08",
+  "block": 4,
+  "inflow": 5.1,
+  "outflow": 4.7,
+  "injection": 1.2,
+  "withdrawal": 1.6,
+  "marginalCost": 14.7
+}
+```
+
+---
+
+# 23. UX
+
+A aplicação deve seguir o princípio:
+
+> Overview first, zoom and filter, details on demand.
+
+A visualização inicial deve permitir identificar rapidamente:
+
+* localização da infraestrutura;
+* estrutura da rede;
+* principais fluxos;
+* congestionamentos;
+* áreas críticas.
+
+Informações detalhadas aparecem progressivamente conforme o usuário interage.
+
+Evitar colocar permanentemente na tela informações que podem ser acessadas por hover, seleção ou drill-down.
+
+---
+
+# 24. UI
+
+A estética deve ser técnica, moderna e limpa.
+
+Referências conceituais:
+
+* aplicações GIS profissionais;
+* interfaces de operação de sistemas;
+* plataformas modernas de análise de dados;
+* ferramentas de engenharia.
+
+Evitar:
+
+* aparência de dashboard corporativo genérico;
+* excesso de cards;
+* gradientes decorativos;
+* sombras excessivas;
+* grandes áreas desperdiçadas;
+* excesso de bordas;
+* ícones sem função;
+* animações meramente decorativas.
+
+Priorizar:
+
+* densidade de informação controlada;
+* hierarquia visual;
+* mapas grandes;
+* tipografia legível;
+* espaçamento consistente;
+* menus contextuais;
+* feedback imediato às interações.
+
+---
+
+# 25. Extensibilidade
+
+A aplicação não deve ser completamente genérica.
+
+O domínio de gasodutos deve orientar:
+
+* nomenclatura;
+* interações;
+* análises;
+* visualizações.
+
+Entretanto, novos tipos de ativos e resultados devem poder ser adicionados sem reconstruir a aplicação.
+
+Preferir componentes orientados por configuração:
+
+```text
+LayerDefinition
+ElementType
+VariableDefinition
+VisualizationPreset
+ContextMenuAction
+```
+
+em vez de interfaces completamente hardcoded para cada elemento.
+
+---
+
+# 26. Não objetivos
+
+A primeira versão não precisa ser:
+
+* um editor GIS completo;
+* um sistema CAD;
+* um editor avançado de geometria;
+* um substituto para QGIS;
+* uma ferramenta genérica para qualquer rede;
+* um sistema completo de criação do modelo energético.
+
+O foco é:
+
+**explorar, compreender, diagnosticar e comparar a rede e os resultados do modelo energético.**
+
+---
+
+# 27. Prioridades da primeira versão
+
+## P0 — Essencial
+
+* mapa georreferenciado;
+* nós;
+* traçados dos gasodutos;
+* zoom e pan;
+* seleção;
+* hover;
+* painel de propriedades;
+* filtros;
+* busca;
+* fluxo;
+* capacidade;
+* utilização;
+* custo marginal;
+* balanço dos nós;
+* séries temporais;
+* tabela integrada ao mapa.
+
+## P1 — Muito desejável
+
+* menu contextual;
+* comparação;
+* timeline;
+* presets de visualização;
+* upstream/downstream;
+* seleção múltipla;
+* exportação.
+
+## P2 — Evolução
+
+* animação temporal;
+* mapas de diferença;
+* Sankey;
+* path analysis;
+* dashboards salvos;
+* bookmarks;
+* criação de views customizadas;
+* edição limitada de inputs;
+* anotação e compartilhamento de análises.

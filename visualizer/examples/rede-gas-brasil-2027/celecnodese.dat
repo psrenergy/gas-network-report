@@ -1,0 +1,33 @@
+$version=1
+!Code,Name,Process
+1,EMED Corumba,1
+2,Campo Grande,1
+3,Tres Lagoas,1
+4,Paulinia (Replan),1
+5,Guararema,1
+6,Capuava / RGE-SP,1
+7,Cubatao (RPBC),1
+8,Terminal GNL Santos (lado GN),1
+9,UTGCA Caraguatatuba,1
+10,Taubate,1
+11,Volta Redonda,1
+12,Japeri,1
+13,REDUC / Duque de Caxias,1
+14,Terminal GNL B. Guanabara (lado GN),1
+15,UPGN Itaborai (Boaventura),1
+16,TECAB Cabiunas,1
+17,Porto do Acu (lado GN),1
+18,Vitoria / Serra,1
+19,UTGC Cacimbas,1
+30,Cuiaba,1
+49,Belo Horizonte / Betim,1
+51,Linepack GASBOL (T. LagoasPaulinia),1
+53,Linepack corredor RJSP (JaperiGuararema),1
+55,Rio Grande (Bolivia)  cabeceira do GASBOL,1
+56,Campo Duran (Argentina)  exportacao p/ Bolivia,1
+41,Tanque FSRU Baia de Guanabara,2
+45,Tanque FSRU Acu,2
+46,Tanque FSRU Santos,2
+58,Mercado internacional de GNL (bacia Atlantica),2
+60,Juiz de Fora,1
+63,Sepetiba / Itaguai,1

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gas Network Explorer</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23122945'/%3E%3Cpath d='M6 22 L13 10 L19 18 L26 9' stroke='%2326828C' stroke-width='3.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='26' cy='9' r='3' fill='%23AB9671'/%3E%3C/svg%3E">
+<!-- Third-party libraries: local copies in vendor/ (works offline), CDN as fallback -->
+<link rel="stylesheet" href="vendor/maplibre-gl.css" onerror="this.onerror=null;this.href='https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css'">
+<link rel="stylesheet" href="vendor/tabulator.min.css" onerror="this.onerror=null;this.href='https://cdn.jsdelivr.net/npm/tabulator-tables@6.3.0/dist/css/tabulator.min.css'">
+<link rel="stylesheet" href="vendor/fonts/fonts.css">
+<link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="css/psr-tokens.css">
+<link rel="stylesheet" href="css/app.css">
+<script src="vendor/maplibre-gl.js"></script>
+<script>window.maplibregl || document.write('<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js"><\/script>');</script>
+<script src="vendor/echarts.min.js"></script>
+<script>window.echarts || document.write('<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"><\/script>');</script>
+<script src="vendor/tabulator.min.js"></script>
+<script>window.Tabulator || document.write('<script src="https://cdn.jsdelivr.net/npm/tabulator-tables@6.3.0/dist/js/tabulator.min.js"><\/script>');</script>
+</head>
+<body>
+<div id="app">
+  <header id="toolbar">
+    <div class="brand" title="PSR · Gas Network Explorer">
+      <img src="assets/psr-logo-white.svg" alt="PSR">
+      <span class="brand-sep"></span>
+      <span><i class="brand-dot"></i>Gas Network Explorer</span>
+    </div>
+    <div class="dims" id="dims">
+      <label class="dim"><span>Case</span><select id="dim-case"></select></label>
+      <label class="dim" id="dim-seq-wrap"><span>Scenario</span><select id="dim-seq"></select></label>
+      <label class="dim"><span>View</span><select id="dim-preset"></select></label>
+      <label class="dim"><span>Compare</span><select id="dim-compare"></select></label>
+    </div>
+    <div class="search-wrap">
+      <i class="fa-solid fa-magnifying-glass search-ico"></i>
+      <input id="search" type="search" placeholder="Search nodes, pipelines, assets…  (Ctrl+K)" autocomplete="off" spellcheck="false">
+      <div id="search-results" hidden></div>
+    </div>
+    <div class="tools">
+      <button class="icon-btn" id="btn-left" title="Collapse / expand left dock ( [ )"><i class="fa-solid fa-table-columns"></i></button>
+      <button class="icon-btn" id="btn-bottom" title="Collapse / expand bottom dock ( \ )"><i class="fa-regular fa-window-maximize fa-flip-vertical"></i></button>
+      <button class="icon-btn" id="btn-right" title="Collapse / expand right dock ( ] )"><i class="fa-solid fa-table-columns fa-flip-horizontal"></i></button>
+      <div class="menu-wrap">
+        <button class="btn" id="btn-panels" title="Show / hide panels, reset layout"><i class="fa-solid fa-layer-group"></i>Panels <i class="fa-solid fa-chevron-down" style="margin:0 0 0 6px;font-size:10px"></i></button>
+        <div class="menu" id="menu-panels" hidden></div>
+      </div>
+      <button class="icon-btn" id="btn-maponly" title="Map only (M)"><i class="fa-solid fa-expand"></i></button>
+      <span class="tsep"></span>
+      <button class="icon-btn" id="btn-note" title="Add an annotation (N)"><i class="fa-solid fa-location-dot"></i></button>
+      <button class="icon-btn" id="btn-export" title="Export map figure (PNG / SVG)"><i class="fa-solid fa-camera"></i></button>
+      <button class="icon-btn" id="btn-share" title="Copy link to this view"><i class="fa-solid fa-link"></i></button>
+      <button class="icon-btn" id="btn-theme" title="Light / dark theme"><i class="fa-solid fa-circle-half-stroke"></i></button>
+      <button class="icon-btn" id="btn-settings" title="Preferences"><i class="fa-solid fa-gear"></i></button>
+      <button class="icon-btn" id="btn-help" title="Help and shortcuts (?)"><i class="fa-regular fa-circle-question"></i></button>
+      <div class="menu-wrap">
+        <button class="btn primary" id="btn-open"><i class="fa-solid fa-folder-open"></i>Open case <i class="fa-solid fa-chevron-down" style="margin:0 0 0 6px;font-size:10px"></i></button>
+        <div class="menu right" id="menu-open" hidden>
+          <button data-open="folder"><i class="fa-regular fa-folder"></i>SDDP case folder…</button>
+          <button data-open="file"><i class="fa-regular fa-file"></i>Dataset, GeoJSON or shapefiles (.json / .geojson / .shp+.dbf)…</button>
+          <div class="menu-sep"></div>
+          <button data-open="export"><i class="fa-solid fa-download"></i>Save current case as dataset (.json)</button>
+          <button data-open="exportLib"><i class="fa-solid fa-users"></i>Save as team-library file (.case.js)</button>
+          <button data-open="remove"><i class="fa-solid fa-xmark"></i>Close current case</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="workspace">
+    <aside class="dock" id="dock-left" data-dock="left"><div class="dock-tabs"></div><div class="dock-body"></div></aside>
+    <div class="gutter v" id="gutter-left" data-panel="left"></div>
+
+    <section id="center">
+      <div id="map-wrap">
+        <div id="map"></div>
+        <div id="chips"></div>
+        <div id="timeline" class="overlay"></div>
+        <!-- period and block selectors: moved into the timeline bar by ui-panels.js -->
+        <div hidden>
+          <label class="tl-dim" id="tl-period"><span>Period</span><select id="dim-stage"></select></label>
+          <label class="tl-dim" id="tl-block"><span>Block</span><select id="dim-block"></select></label>
+        </div>
+        <div id="kpis" class="overlay"></div>
+        <div id="floats"></div>
+        <div id="empty" hidden>
+          <div class="empty-card">
+            <h1>Open an SDDP gas-network case</h1>
+            <p>Pick the case folder (the one that contains <code>celecnode*.dat</code>, <code>celectransport.dat</code> and the result CSVs), or drag folders onto this window. Files are read locally in your browser and are not uploaded anywhere.</p>
+            <div class="empty-actions">
+              <button class="btn primary" id="empty-folder">Open case folder…</button>
+              <button class="btn" id="empty-file">Open dataset (.json)…</button>
+            </div>
+            <p class="muted small">To compare cases, open several folders. To share a pre-loaded case with your team, see <b>README.md</b>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="gutter h" id="gutter-bottom" data-panel="bottom"></div>
+      <section class="dock" id="dock-bottom" data-dock="bottom"><div class="dock-tabs"></div><div class="dock-body"></div></section>
+    </section>
+
+    <div class="gutter v" id="gutter-right" data-panel="right"></div>
+    <aside class="dock" id="dock-right" data-dock="right"><div class="dock-tabs"></div><div class="dock-body"></div></aside>
+  </main>
+</div>
+
+<!-- Panel contents; the dock manager moves them into docks or floating windows -->
+<div id="panel-src" hidden>
+  <section data-panel="layers" data-title="Layers"><div class="panel-body" id="layers-body"></div></section>
+  <section data-panel="filters" data-title="Filters"><div class="panel-body" id="filters-body"></div></section>
+  <section data-panel="legend" data-title="Legend"><div class="panel-body" id="legend-body"></div></section>
+  <section data-panel="props" data-title="Properties"><div class="panel-body" id="right-body"></div></section>
+  <section data-panel="checks" data-title="Data checks"><div class="panel-body" id="checks-body"></div></section>
+  <section data-panel="data" data-title="Tables &amp; charts">
+    <div class="panel-tabs" id="bottom-tabs">
+      <button class="ptab active" data-btab="arcs">Pipelines</button>
+      <button class="ptab" data-btab="nodes">Nodes</button>
+      <button class="ptab" data-btab="assets">Assets</button>
+      <button class="ptab" data-btab="charts">Charts</button>
+      <button class="ptab" data-btab="compare">Compare</button>
+      <div class="tab-tools" id="bottom-tools"></div>
+    </div>
+    <div class="panel-body" id="bottom-body"></div>
+  </section>
+</div>
+<div class="menu" id="dock-menu" hidden style="position:fixed"></div>
+
+<div id="tooltip" hidden></div>
+<div id="ctxmenu" hidden></div>
+<div id="toasts"></div>
+<div id="dropzone" hidden><div>Drop SDDP case folder(s), a dataset (.json) or pipeline geometry (.geojson)</div></div>
+<div id="modal" hidden><div class="modal-card" id="modal-card"></div></div>
+<input type="file" id="folder-input" webkitdirectory directory multiple hidden>
+<input type="file" id="file-input" accept=".json,.geojson,.js,.shp,.dbf,.cpg,.prj" multiple hidden>
+
+<script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/select.js"></script>
+<script src="js/util.js"></script>
+<script src="js/state.js"></script>
+<script src="js/parser-sddp.js"></script>
+<script src="js/shapefile.js"></script>
+<script src="js/routing.js"></script>
+<script src="js/model.js"></script>
+<script src="js/app.js"></script>
+<script src="js/origin.js"></script>
+<script src="js/layers.js"></script>
+<script src="js/map.js"></script>
+<script src="js/interact.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/dock.js"></script>
+<script src="js/ui-layers.js"></script>
+<script src="js/checks.js"></script>
+<script src="js/views.js"></script>
+<script src="js/export.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/ui-panels.js"></script>
+<script src="js/ui-props.js"></script>
+<script src="js/ui-bottom.js"></script>
+<script src="js/loader.js"></script>
+<script src="js/main.js"></script>
+<!-- Team library: cases listed here are pre-loaded for everyone who opens this copy of the app -->
+<script src="data/library.js"></script>
+</body>
+</html>

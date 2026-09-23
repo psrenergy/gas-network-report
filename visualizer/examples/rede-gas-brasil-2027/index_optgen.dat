@@ -1,0 +1,231 @@
+Num Graph...........................|...Unid Type  Y/N
+  1 Thermal firm energy              Mwavg      2    0
+  2 Thermal firm capacity            MW         2    0
+  3 Hydro firm energy                Mwavg      2    0
+  4 Hydro firm capacity              MW         2    0
+  5 Invested capacity                MW         2    0
+  6 Investment + fixed O&M cost      k$         1    0
+  7 Investment cost (CAPEX)          k$         1    0
+  8 Fixed O&M cost                   k$         1    0
+  9 Total Investment cost            k$         1    0
+ 10 Discount factor                  p.u.       0    0
+ 11 MinMax constraints marg cost     M$/MW      3    0
+ 12 OptGen2: Load - inelastic        MW         0    0
+ 13 OptGen2: Load block length       hours      0    0
+ 14 OptGen2: Demand by bus           MW         0    0
+ 15 OptGen2: Deficit by system       MW         7    0
+ 16 OptGen2: Fuel consumption        uv         2    0
+ 17 OptGen2: Available thermal capaciMW         0    0
+ 18 OptGen2: Minimum thermal generatiMW         0    0
+ 19 OptGen2: Unit variable cost for t$/MWh      0    0
+ 20 OptGen2: Unit variable cost for t$/MWh      0    0
+ 21 OptGen2: Unit variable cost for t$/MWh      0    0
+ 22 OptGen2: Maximum Chronological ThMW         0    0
+ 23 OptGen2: Minimum Chronological ThMW         0    0
+ 24 OptGen2: Thermal generation      MW         2    0
+ 25 OptGen2: Total cost spent to genek$         1    0
+ 26 OptGen2: Thermal usage factor    p.u.       6    0
+ 27 OptGen2: Total reserve allocated MW         2    0
+ 28 OptGen2: Net generation for batteMW         2    0
+ 29 OptGen2: Batteries discharging byMW         2    0
+ 30 OptGen2: Batteries charging by hoMW         2    0
+ 31 OptGen2: Battery storage capacityMWh        2    0
+ 32 OptGen2: Battery leakage         MW         2    0
+ 33 OptGen2: Total reserve allocated MW         2    0
+ 34 OptGen2: Battery LCOS            $/MWh      1    0
+ 35 OptGen2: Battery state of charge MW         2    0
+ 36 OptGen2: Renewable Generation    MW         2    0
+ 37 OptGen2: Renewable Curtailment   MW         2    0
+ 38 OptGen2: Total reserve allocated MW         2    0
+ 39 OptGen2: CSP generation          MW         2    0
+ 40 OptGen2: CSP thermal outflow     MWt        2    0
+ 41 OptGen2: CSP thermal inflow      MWt        2    0
+ 42 OptGen2: CSP thermal storage voluMWt        2    0
+ 43 OptGen2: CSP curtailment         MWt        2    0
+ 44 OptGen2: Total reserve allocated MW         2    0
+ 45 OptGen2: Available hydro capacityMW         0    0
+ 46 OptGen2: Mean production factor oMW/m3/s    0    0
+ 47 OptGen2: Maximum turbining outflohm3        0    0
+ 48 OptGen2: Minimum storage for hydrhm3        0    0
+ 49 OptGen2: Maximum storage for hydrhm3        0    0
+ 50 OptGen2: Irrigation              hm3        0    0
+ 51 OptGen2: Minimum storage         hm3        0    0
+ 52 OptGen2: Minimum spillage        m3/s       0    0
+ 53 OptGen2: Minimum total outflow   m3/s       0    0
+ 54 OptGen2: Minimum turbining outflom3/s       0    0
+ 55 OptGen2: Alert storage           hm3        0    0
+ 56 OptGen2: Final storage           hm3        2    0
+ 57 OptGen2: Hydro spillage          m3/s       2    0
+ 58 OptGen2: Hydro turbining outflow m3/s       2    0
+ 59 OptGen2: Hydro inflow            m3/s       2    0
+ 60 OptGen2: Hydro generation        MW         2    0
+ 61 OptGen2: Irrigation penalty      k$         8    0
+ 62 OptGen2: Irrigation violation    hm3        7    0
+ 63 OptGen2: Minimum tot. outflow penk$         8    0
+ 64 OptGen2: Minimum tot. outflow viom3/s       7    0
+ 65 OptGen2: Minimum turb. outflow pek$         8    0
+ 66 OptGen2: Minimum turb. outflow vim3/s       7    0
+ 67 OptGen2: Minimum spillage penaltyk$         8    0
+ 68 OptGen2: Minimum spillage violatim3/s       7    0
+ 69 OptGen2: Minimum storage penalty k$         8    0
+ 70 OptGen2: Minimum storage violatiohm3        7    0
+ 71 OptGen2: Alert storage penalty   k$         8    0
+ 72 OptGen2: Alert storage violation hm3        7    0
+ 73 OptGen2: Operation & Maintenance k$         1    0
+ 74 OptGen2: Total reserve allocated MW         2    0
+ 75 OptGen2: Interconnection capacityMW         0    0
+ 76 OptGen2: Interconnection capacityMW         0    0
+ 77 OptGen2: Interconnection flow FROMW         2    0
+ 78 OptGen2: Interconnection flow TO-MW         2    0
+ 79 OptGen2: Sum of interconnection fMW         2    0
+ 80 OptGen2: Interconnection sum consMW         0    0
+ 81 OptGen2: Interconnection sum consMW         0    0
+ 82 OptGen2: DC link capacity from>toMW         0    0
+ 83 OptGen2: DC link capacity to>fromMW         0    0
+ 84 OptGen2: Net flow for dclinks    MW         2    0
+ 85 OptGen2: Circuit capacity        MW         0    0
+ 86 OptGen2: Circuit flow            MW         2    0
+ 87 OptGen2: Sum of circuit flows    MW         2    0
+ 88 OptGen2: Circuit sum constraint uMW         0    0
+ 89 OptGen2: Circuit sum constraint lMW         0    0
+ 90 OptGen2: Bus voltage angle       rad        2    0
+ 91 OptGen2: Total elastic load supplMW         2    0
+ 92 OptGen2: Flexible load supplied  MW         2    0
+ 93 OptGen2: Flexible load curtailed MW         7    0
+ 94 OptGen2: Generation reserve RHS  MW         0    0
+ 95 OptGen2: Amount of capacity addedMW         2    0
+ 96 OptGen2: Generation reserve violaMW         7    0
+ 97 OptGen2: Marginal reserve cost   $/MWh      3    0
+ 98 OptGen2: Generation constraint   MW         0    0
+ 99 OptGen2: Generation constraint viMW         7    0
+100 OptGen2: General constraint      unit       0    0
+101 OptGen2: General constraint violaunit       7    0
+102 OptGen2: Gas production          uv/day     2    0
+103 OptGen2: Gas pipeline flow FROM->uv/day     2    0
+104 OptGen2: Gas pipeline flow TO->FRuv/day     2    0
+105 OptGen2: Gas demand deficit      uv/day     7    0
+106 OptGen2: Import per electrical arMW         2    0
+107 OptGen2: Export per electrical arMW         2    0
+108 OptGen2: HERA model - Minimum fiskm         0    0
+109 OptGen2: HERA model - attribute r           6    0
+110 OptGen2: HERA model - satisfactio           6    0
+111 OptGen2: Amount consumed per contuv         2    0
+112 OptGen2: Amount consumed per contuv         2    0
+113 OptGen2: ToP consumed per contracuv         2    0
+114 OptGen2: Maximum withdrawal per cuv         0    0
+115 OptGen2: Fuel contract offtake couv         1    0
+116 OptGen2: Sensitivity load factor p.u        6    0
+117 OptGen2: OPTGEN 2 convergence rep%          6    0
+118 OptGen2: OPTGEN 2 operative cost M$         1    0
+119 OptGen2: Aggregated load marginal$/MWh      3    0
+120 OptGen2: Load marginal cost per t$/MWh      3    0
+121 OptGen2: Levelized cost for renew$/MWh      1    0
+122 OptGen2: Levelized cost for renew$/MWh      1    0
+123 OptGen2: Capacity factor for renep.u        6    0
+124 OptGen2: Capacity factor for renep.u        6    0
+125 OptGen2: Investment cost for reneM$         1    0
+126 OptGen2: Firm energy for renewablMW.avg     4    0
+127 OptGen2: Firm capacity for renewaMW         4    0
+128 OptGen2: Renewable installed capaMW         4    0
+129 OptGen2: Levelized cost for CSP -$/MWh      1    0
+130 OptGen2: Levelized cost for CSP c$/MWh      1    0
+131 OptGen2: Capacity factor for CSP p.u        6    0
+132 OptGen2: Capacity factor for CSP p.u        6    0
+133 OptGen2: Investment cost for CSP M$         1    0
+134 OptGen2: CSP thermal outflow (eneGWh        2    0
+135 OptGen2: CSP thermal inflow (enerGWh        2    0
+136 OptGen2: CSP thermal storage (eneGWh        2    0
+137 OptGen2: Node investment cost    M$         1    0
+138 OptGen2: Levelized cost for therm$/MWh      1    0
+139 OptGen2: Investment cost for therM$         1    0
+140 OptGen2: Firm energy for thermalsMW.avg     4    0
+141 OptGen2: Firm capacity for thermaMW         4    0
+142 OptGen2: Thermal installed capaciMW         4    0
+143 OptGen2: Levelized cost for hydro$/MWh      1    0
+144 OptGen2: Investment cost for hydrM$         1    0
+145 OptGen2: Firm energy for hydros  MW.avg     4    0
+146 OptGen2: Firm capacity for hydrosMW         4    0
+147 OptGen2: Hydro installed capacityMW         4    0
+148 OptGen2: Investment cost for battM$         1    0
+149 OptGen2: Battery firm energy     MW.avg     4    0
+150 OptGen2: Battery firm capacity   MW         4    0
+151 OptGen2: Battery installed capaciMW         4    0
+152 OptGen2: Gas node investment costM$         1    0
+153 OptGen2: Gas pipeline investment M$         1    0
+154 OptGen2: Investment cost for dcliM$         1    0
+155 OptGen2: Circuit investment cost M$         1    0
+156 OptGen2: Investment cost for inteM$         1    0
+157 OptGen2: Generic constraint margiM$/MW      3    0
+158 OptGen2: Hourly final storage    hm3        2    0
+159 OptGen2: Hourly hydro spillage   m3/s       2    0
+160 OptGen2: Hourly hydro turbining om3/s       2    0
+161 OptGen2: Hourly hydro inflow     m3/s       2    0
+162 OptGen2: Hourly irrigation penaltk$         8    0
+163 OptGen2: Hourly irrigation violathm3        7    0
+164 OptGen2: Hourly minimum tot. outfk$         8    0
+165 OptGen2: Hourly minimum tot. outfm3/s       7    0
+166 OptGen2: Hourly minimum turb. outk$         8    0
+167 OptGen2: Hourly minimum turb. outm3/s       7    0
+168 OptGen2: Hourly minimum spillage k$         8    0
+169 OptGen2: Hourly minimum spillage m3/s       7    0
+170 OptGen2: Hourly minimum storage pk$         8    0
+171 OptGen2: Hourly minimum storage vhm3        7    0
+172 OptGen2: Hourly alert storage penk$         8    0
+173 OptGen2: Hourly alert storage viohm3        7    0
+174 OptGen2: Load block length in pu p.u        0    0
+175 OptGen2: Hour-block mapping for t           0    0
+176 OptGen2: Circuit reactance result%          2    0
+177 OptGen2: Losses in circuits      MW         2    0
+178 OptGen2: Power injections        MW         2    0
+179 OptGen2: Power injection cost    k$         1    0
+180 OptGen2: FPD generation          kUC        2    0
+181 OptGen2: FPD revenue             k$         9    0
+182 OptGen2: Generic emissions       unit       2    0
+183 OptGen2: Interconnection reserve MW         2    0
+184 OptGen2: Interconnection reserve MW         2    0
+185 OptGen2: DC link reserve TO      MW         2    0
+186 OptGen2: DC link reserve FROM    MW         2    0
+187 OptGen2: Circuit reserve TO      MW         2    0
+188 OptGen2: Circuit reserve FROM    MW         2    0
+189 OptGen2: Energy chain storage netunit/h     2    0
+190 OptGen2: Energy chain storage disunit/h     2    0
+191 OptGen2: Energy chain storage chaunit/h     2    0
+192 OptGen2: Energy chain storage finunit       2    0
+193 OptGen2: Energy chain storage staunit       2    0
+194 OptGen2: Energy chain storage invM$         1    0
+195 OptGen2: Energy chain transport funit/h     2    0
+196 OptGen2: Energy chain transport funit/h     2    0
+197 OptGen2: Energy chain transport iM$         1    0
+198 OptGen2: Energy chain producer geunit/h     2    0
+199 OptGen2: Energy chain producer inM$         1    0
+200 OptGen2: Energy chain node demandunit/h     0    0
+201 OptGen2: Energy chain deficit    unit/h     7    0
+202 OptGen2: Operational cost breakdoM$         1    0
+203 OptGen2: Generic constraint LHS             0    0
+204 OptGen2: Generic constraint RHS             0    0
+205 OptGen2: Min/max constraint LHS  MW         0    0
+206 OptGen2: Min/max constraint RHS  MW         0    0
+207 OptGen2: Firm capacity of renewabpu         4    0
+208 OptGen2: Scenario probability    pu         0    0
+209 OptGen2: Energy chain fixed convekUE        2    0
+210 OptGen2: Energy chain fixed convekUE        2    0
+211 OptGen2: Energy chain fixed conveM$         1    0
+212 OptGen2: Energy chain elastic demunit/h     2    0
+213 OptGen2: Thermal reduced cost    M$         3    0
+214 OptGen2: Hydro reduced cost      M$         3    0
+215 OptGen2: Renewable reduced cost  M$         3    0
+216 OptGen2: CSP reduced cost        M$         3    0
+217 OptGen2: Battery reduced cost    M$         3    0
+218 OptGen2: Energy efficiency       MW         2    0
+219 OptGen2: Energy efficiency per syMW         2    0
+220 OptGen2: Energy efficiency per buMW         2    0
+221 OptGen2: Integer generation constunit       7    0
+222 OptGen2: 3-winding transformer flMW         2    0
+223 OptGen2: Energy efficiency firm eMW.avg     4    0
+224 OptGen2: Energy efficiency firm cMW         4    0
+225 OptGen2: Island node type                  10    0
+226 OptGen2: Bus to island assignment          10    0
+227 OptGen2: Excess generation       MW         7    0
+228 OptGen2: Hydro unit generation   MW         2    0
+229 OptGen2: Thermal unit generation MW         2    0
+230 OptGen2: Renewable unit generatioMW         2    0

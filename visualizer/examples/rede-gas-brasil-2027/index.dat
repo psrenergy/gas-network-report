@@ -1,0 +1,527 @@
+Num Graph...........................|...Unid Type  Y/N
+  1 Alert storage                    hm3        0    0
+  2 Available hydro capacity         MW         0    0
+  3 Available thermal capacity       MW         0    0
+  4 Historic inflows average         m3/s       0    0
+  5 Inflows                          m3/s       0    0
+  6 Load per system - inelastic      GWh        0    0
+  7 Load per bus - inelastic         GWh        0    0
+  8 Maximum storage                  hm3        0    0
+  9 Maximum stored energy            GWh        0    0
+ 10 Maximum total outflow            m3/s       0    0
+ 11 Maximum turbined outflow         m3/s       0    0
+ 12 Minimum security storage         hm3        0    0
+ 13 Minimum total outflow            m3/s       0    0
+ 14 Minimum turbined outflow         m3/s       0    1
+ 15 Deficit cost                     k$         8    0
+ 16 Violation mininum percentual spilm3/s       7    0
+ 17 Viol. cost of min. percentual spik$         8    0
+ 18 Viol. hydro generator group min. MWh        7    0
+ 19 Unit cost of hydro spillage      k$/hm3     0    0
+ 20 Thermal operating cost           k$         1    0
+ 21 Unit viol. cost of alert storage k$/hm3     8    0
+ 22 Viol. cost of max.tot.outflow    k$         8    0
+ 23 Unit viol. cost min. op. storage k$/hm3     8    0
+ 24 Viol. cost of min.tot.outflow    k$         8    0
+ 26 Deficit                          GWh        7    0
+ 27 Deficit per bus                  GWh        7    0
+ 28 Area transfer - export           GWh        2    0
+ 29 Final head                       m          2    0
+ 30 Final storage                    hm3        2    0
+ 31 Fuel consumption                 k.unit     2    0
+ 32 Fuel consumption rate            un/h       2    0
+ 33 Hydro generation                 GWh        2    0
+ 34 Interconnection flow             GWh        2    0
+ 35 Spilled outflow                  m3/s       2    0
+ 36 Stored energy                    GWh        2    0
+ 37 Thermal generation               GWh        2    0
+ 38 Turbined outflow                 m3/s       2    0
+ 39 AC Bus marginal cost             $/MWh      3    0
+ 40 AC Circuit cap. marg. cost       k$/MW      3    0
+ 42 Interconnection marginal cost    k$/MW      3    0
+ 43 Load marginal cost               $/MWh      3    0
+ 44 Marginal cost of fuel cons.      $/un       3    0
+ 45 Marginal cost of fuel rate       k$/un/h    3    0
+ 46 Marginal value of water          k$/hm3     3    0
+ 47 Reservoir capacity marg.cost     k$/hm3     3    0
+ 48 Ro marginal cost ($/MWh/hm3)     $/ro       3    0
+ 49 Thermal capacity marg. cost      k$/MW      3    0
+ 50 Turbine capacity marg. cost      k$/m3/s    3    0
+ 52 VERE                             %          2    0
+ 53 VEREC (1.5%)                     %          2    0
+ 54 Maximum flow AC                  MW         0    0
+ 55 Start-up cost                    k$         1    0
+ 56 Hydro Gen. x Bus MargCost        k$         9    0
+ 57 Therm Gen. x Bus MargCost        k$         9    0
+ 60 AC Circuit income                k$         9    0
+ 61 Inflow energy per system         GWh        0    0
+ 62 Thermal minimum gen. ctr. req.   MW         0    0
+ 63 Battery joint reserve cost       k$         1    0
+ 64 CSP joint reserve cost           k$         1    0
+ 65 Total income - multinodal        k$         1    0
+ 66 Load level length                h          0    0
+ 67 Production factor                MW/m3/s    2    0
+ 68 AC circuit losses                MW         2    0
+ 69 Minimum thermal generation       MW         0    0
+ 70 AC circuit flag                  0/1        0    0
+ 71 Opportunity Cost Hydro Gener.    $/MWh      3    0
+ 72 Nominal hydro capacity           MW         0    0
+ 73 Interconnection capacity FROM->TOMW         0    0
+ 74 Interconnection income           k$         1    0
+ 75 Hydro O&M cost                   k$         1    0
+ 76 Thermal plt. unit cost - seg. 1  $/MWh      0    0
+ 77 Thermal plt. unit cost - seg. 2  $/MWh      0    0
+ 78 Thermal plt. unit cost - seg. 3  $/MWh      0    0
+ 79 Start-up Cost Data               k$         0    0
+ 80 System Spilled energy            GWh        2    0
+ 81 Hydro Forced Outage Rate         %          0    0
+ 82 Thermal Forced Outage Rate       %          0    0
+ 83 Num.of operating hydro units     0          0    0
+ 84 Num.of operating thermal units   0          0    0
+ 89 Maximum transfer limit per area  MW         0    0
+ 90 Flood control volume             hm3        0    0
+ 91 Nominal thermal capacity         MW         0    0
+ 92 Hydro Composite Outage Rate      %          0    0
+ 93 Thermal Composite Outage Rate    %          0    0
+ 94 Generation constraints           MW         0    0
+ 95 AC Bus voltage angle             Degree     2    0
+ 96 Thermal single reserve req.      MW         0    0
+ 97 Reference Inflow Energy          GWh        0    0
+ 98 DC link joint reserve            MW         2    0
+ 99 Turbinable Spilled Energy        GWh        2    0
+100 Violation cost of min. turb.     k$         8    0
+101 Joint reserve req.               MW         0    0
+102 Joint reserve                    MW         2    0
+103 Marg. cost joint reserve         k$/MW      3    0
+104 Irrigation                       m3/s       0    0
+105 Irrigation violation             m3/s       7    0
+106 Hydro single reserve req.        MW         0    0
+107 Circuit flow sum upper bound     MW         0    0
+108 Circuit flow sum lower bound     MW         0    0
+109 Circuit flow sum constraint      MW         2    0
+110 Circuit flow sum marginal cost   k$/MW      3    0
+111 Interconnection sum upper bound  MW         0    0
+112 Interconnection sum lower bound  MW         0    0
+113 Interconnection sum constraint   MW         2    0
+114 Interconnection sum marginal costk$/MW      3    0
+115 Minimum operative storage violatihm3        7    0
+116 Violation alert storage          hm3        7    0
+117 Violation generation constraint  MW         7    0
+118 Violation minimum turb. outflow  m3/s       7    0
+119 Violation maximum total outflow  m3/s       7    0
+120 Violation minimum total outflow  m3/s       7    0
+121 Violation joint reserve          MW         7    0
+123 DC Link capacity FROM->TO        MW         0    0
+124 Thermal oper. cost (fuel+transp) k$         1    0
+125 Thermal O&M cost                 k$         1    0
+126 AC quadratic losses              MW         2    0
+127 Interconnection cost FROM->TO    $/MWh      0    0
+128 Total interconnection cost       k$         1    0
+129 Interconnection losses           MW         2    0
+130 Percentage of stored energy      %          2    0
+131 Inflow Energy to 65% U.S.        GWh        0    0
+132 Production factor to 65% U.S.    MW/m3/s    0    0
+133 Large load supplied              GWh        2    0
+134 Large load curtailment           GWh        2    0
+135 Maximum large load               GWh        0    0
+136 Minimum large load               GWh        0    0
+137 Reference large load load        GWh        0    0
+141 CSP nominal capacity             MW         0    0
+145 Stored energy by reservoir       GWh        2    0
+146 Fuel consumption by thermal      k.units    2    0
+147 Thermal capacity margin          MW         2    0
+148 Hydro capacity margin            MW         2    0
+149 Thermal single reserve           MW         2    0
+150 Thermal joint reserve            MW         2    0
+151 Hydro single reserve             MW         2    0
+152 Hydro joint reserve              MW         2    0
+153 Production factor - SHP          MW/m3/s    2    0
+154 Stored energy - SHP              GWh        2    0
+155 Minimum turbined outflow marginalk$/m3/s    3    0
+156 Hydro Capacity (no outages)      MW         2    0
+157 Filtration                       m3/s       2    0
+158 Hydro dispatch factor            %          2    0
+159 Thermal dispatch factor          %          2    0
+160 Evaporation                      m3/s       2    0
+161 Hydro plant commitment decision  pu         2    0
+162 Viol. cost of irrigation         k$         8    0
+163 Viol. cost of joint reserve      k$         8    0
+164 Viol. cost of gen. constraints   k$         8    0
+165 Marg. cost hydro single reserve  k$/MW      3    0
+166 Marg. cost therm single reserve  k$/MW      3    0
+167 DC Link marginal cost            k$/MW      3    0
+168 DC Link losses                   MW         2    0
+170 Thermal cost (oper+emissions)    k$         1    0
+173 Renewable generation             GWh        2    0
+174 Renewable Gen. x Bus MargCost    k$         9    0
+175 Renewable capacity marg. cost    k$/MW      3    0
+176 Available turbined outflow       m3/s       2    0
+177 Marginal cost of gen. constraintsk$/MW      3    0
+179 AC transmission line cost        k$         1    0
+180 Transformers transmission cost   k$         1    0
+181 Fuel contract min. offtake per stUC         7    0
+182 Fuel contract min. offtake per stk$         8    0
+185 Viol. of security energy const. bGWh        7    0
+186 Viol. of alert energy const. by rGWh        7    0
+187 Viol. of flood control energy conGWh        7    0
+189 LGC generation                   GWh        2    0
+190 LGC revenue                      k$         9    0
+191 Limit of Risk Aversion Curve     GWh        0    0
+192 Marg. cost Risk Aversion Curve   k$/MWh     3    0
+193 Viol. cost Risk Aversion Curve   k$         8    0
+198 Battery final stored energy (%)  %          2    0
+199 Fuel contract min. daily offtake UC         7    0
+200 Fuel contract min. daily offtake k$         8    0
+203 Circuit overload                 MW         7    0
+204 Circuit overload penalty         k$         8    0
+220 Initial storage                  hm3        2    0
+224 Risk Aversion Curve violation    GWh        7    0
+228 Total flow per AC bus            MW         2    0
+229 Load per system - supplied       GWh        2    0
+230 Load per bus - supplied          GWh        2    0
+231 Load per system - maximum        GWh        0    0
+232 Load per class - supplied        GWh        2    0
+234 Maximum stored energy 65% U.S.   GWh        0    0
+235 Index of island in AC network    Island     0    0
+236 Stored energy by reservoir set   GWh        2    0
+237 Nominal renewable capacity       MW         0    0
+238 Hydro spilled energy             GWh        2    0
+239 Total contracted per contract    kUC        0    0
+240 Maximum withdrawal per contract  UC/h       0    0
+241 Remaining amount per contract    kUC        2    0
+242 Amount not consumed per contract kUC        2    0
+243 Amount consumed per contract     kUC        2    0
+244 Marg. cost of contract add. value$/UC       3    0
+245 Max. storage fuel reservoir      kUC        0    0
+246 Max. fuel reservoir injection    UC/h       0    0
+247 Max. fuel reservoir withdrawal   UC/h       0    0
+248 Final storage of fuel reservoir  kUC        2    0
+249 Fuel reservoir injection         kUC        2    0
+250 Fuel reservoir withdrawal        kUC        2    0
+251 Thermal consumption via contractskUC        2    0
+252 Thermal consumption via fuel res.kUC        2    0
+253 Total ToP contracted per contractkUC        0    0
+254 Remaining ToP amount per contractkUC        2    0
+255 ToP not consumed per contract    kUC        2    0
+256 ToP marginal cost per contract   $/UC       3    0
+257 ToP consumed per contract        kUC        2    0
+258 Load per class - inelastic       GWh        0    0
+259 Load per class - maximum         GWh        0    0
+260 Load per bus - maximum           GWh        0    0
+261 Load per class - benefit         k$         1    0
+262 ToP cost per contract            k$         0    0
+263 Additional cost per contract     k$         1    0
+264 Total add contracted per contractkUC        0    0
+265 Add remaining amount per contractkUC        2    0
+266 Add amount consumed per contract kUC        2    0
+267 Add amount not cons. per contractkUC        2    0
+268 Contract cost                    k$         1    0
+269 Final storage (%)                %          2    0
+270 Thermal gen. x load MargCost     k$         9    0
+271 Hydro gen. x load MargCost       k$         9    0
+272 Renewable gen. x load MargCost   k$         9    0
+273 Deficit (% of load)              %          7    0
+274 Deficit per bus (% of load)      %          7    0
+276 Phase Shifter                    Degree     2    0
+278 Hour-block mapping               Block      0    0
+279 Fuel contract: thermal consumptiokUC        2    0
+280 Flow controller reactance        %          2    0
+282 Viol. thermal tech. minimum gen. MW         7    0
+283 Viol. cost thermal tech. minimum k$         8    0
+286 Final storage (typical days)     hm3        2    0
+287 Final storage chronological week hm3        2    0
+290 Load x Bus MargCost              k$         9    0
+291 Stored energy 65% U.S.           GWh        2    0
+293 Marg. value of fuel in reservoir $/UC       3    0
+294 Marg. value fuel reserv. capacity$/UC       3    0
+296 Violation mininum spillage ctr.  m3/s       7    0
+297 Viol. cost of min. spillage ctr. k$         8    0
+298 Minimum spillage ctr.            m3/s       0    0
+299 Hydro spillage cost              k$         1    0
+300 Lerner index for transmission    pu         2    0
+301 Future cost                      k$         2    0
+302 Immediate cost per system        k$         2    0
+303 Costs by category                k$         2    0
+304 Renewable generation spillage    GWh        2    0
+305 AC Circuit income (>0)           k$         9    0
+306 Hydro joint reserve cost         k$         1    0
+307 Thermal joint reserve cost       k$         1    0
+308 Inflow energy per hydro plant    GWh        0    0
+310 Thermal commitment decision      pu         2    0
+311 Renewable scenario               pu         0    0
+312 Renewable selected scenarios     0          0    0
+313 Battery net generation           MWh        2    0
+314 Battery final stored energy      MWh        2    0
+315 Marginal cost of battery maximum $/MWh      3    0
+317 Marginal cost of battery maximum $/MWh      3    0
+318 Scenario probability             p.u.       0    0
+319 Controllable serie capacitor flowMW         2    0
+321 Accumulated production factor    MW/m3/s    2    0
+322 Target storage violation         hm3        7    0
+323 Transformer flow                 MW         2    0
+324 Three winding transformer flow   MW         2    0
+325 Thermal start-up decision        0/1        2    0
+327 Block length in pu               pu         0    0
+328 Power injections                 GWh        2    0
+329 Viol. cost of max op. storage    k$         8    0
+330 Viol. of max op. storage         hm3        7    0
+331 Maximum operative storage        hm3        0    0
+332 Max op. st. marg. cost           k$/hm3     3    0
+333 Battery joint reserve            MW         2    0
+334 Elastic load price per level     $/MWh      0    0
+335 Generic lin. ctr. marginal cost  $/unit     3    0
+336 Generic lin. ctr. violation      unit       7    0
+337 Generic lin. ctr. violation cost k$         8    0
+340 Alert energy by reservoir set    GWh        0    0
+341 Flood control by reservoir set   GWh        0    0
+342 Security energy by reservoir set GWh        0    0
+343 Thermal emissions per plant      unit       2    0
+344 Violation maximum spillage ctr.  m3/s       7    0
+345 Viol. cost of max. spillage ctr. k$         8    0
+346 Maximum spillage ctr.            m3/s       0    0
+347 Thermal emissions cost per plant k$         1    0
+348 Interconnection capacity TO->FROMMW         0    0
+349 DC Link capacity TO->FROM        MW         0    0
+350 Minimum transfer limit per area  MW         0    0
+351 Area transfer - import           GWh        2    0
+352 Interconnection cost TO->FROM    $/MWh      0    0
+353 Fuel availability                k.units    0    0
+354 Max fuel consumption rate        un/h       0    0
+355 Emission budget marginal cost    $/unit     3    0
+356 Power injection cost             k$         2    0
+357 Power injection marginal cost    $/MWh      3    0
+358 Hydro unit generation            GWh        2    0
+359 Renewable O&M cost               k$         1    0
+360 Losses in circuit flow ctr.      MW         2    0
+361 Fuel price                       $/unit     0    0
+362 Remaining emission budget        unit       2    0
+363 Final make-up amount per contractkUC        2    0
+364 Make-up discount per contract    kUC        2    0
+365 Make-up withdrawl per contract   kUC        2    0
+366 Carry forward cons. per contract kUC        2    0
+367 Carry forward available amount   kUC        2    0
+368 Carry forward credit             kUC        2    0
+369 Net AC bus injection             MW         2    0
+370 Accum. prod. factor to 65% U.S.  MW/m3/s    0    0
+371 Max. stored energy by reservoir  GWh        0    0
+372 Carry forward withdrawl per cont.kUC        2    0
+373 Nominal battery capacity         MW         0    0
+374 Viol. thermal minimum gen. ctr.  MW         7    0
+375 Viol. cost thermal min. gen. ctr.k$         8    0
+376 Renewable dispatch factor        %          2    0
+377 Current renewal of fuel contract 0          0    0
+378 Make-up contribution per contractkUC        2    0
+379 Viol. cost sec. en. by res. set  k$         8    0
+380 Viol. cost alert en. by res. set k$         8    0
+381 Viol cost fl. control en. res.setk$         8    0
+382 Violation of hydro outflow ramp  m3/s       7    0
+383 Renewable O&M unitary cost       $/MWh      0    0
+384 Perc. of stored energy by reserv.%          2    0
+385 DC link quadratic losses         MW         2    0
+386 Flexible load supplied           GWh        2    0
+387 Flexible load curtailment        GWh        2    0
+388 Maximum flexible load            GWh        0    0
+389 Minimum flexible load            GWh        0    0
+390 Reference flexible load          GWh        0    0
+391 Flexible load curtailment cost   k$         1    0
+392 Generic int. ctr. marginal cost  $/unit     3    0
+393 Minimum hydro unit turbining violm3/s       7    0
+394 Minimum hydro unit turbining violk$         8    0
+395 Generic variable                 unit       2    0
+396 Battery losses                   MWh        2    0
+397 Exclusive reserve                MW         2    0
+409 Circuit joint reserve            MW         2    0
+410 Fuel contract availability       k.units    0    0
+411 Carry forward discount per contr.kUC        2    0
+412 Contract ToP billing             k$         2    0
+413 Contract consumption billing     k$         2    0
+414 Battery O&M unitary cost         $/MWh      0    0
+415 Battery Gen. x Bus MargCost      k$         9    0
+416 Battery gen. x load MargCost     k$         9    0
+419 Thermal generator group generatioGWh        2    0
+420 Thermal generator group commitmenpu         2    0
+421 E. Chain: demand supplied        kUE        2    1
+422 E. Chain: elastic demand cost    k$         1    1
+423 E. Chain: elastic demand marginalk$/UE/d    3    1
+424 E. Chain: transport flow         UE         2    1
+425 E. Chain: transport cost         k$         1    1
+426 E. Chain: transport cap. marg. cok$/UE/d    3    1
+427 E. Chain.: final storage         kUE        2    1
+428 E. Chain: final stor. marg. cost $/UE       3    1
+429 E. Chain: storage net inj.       kUE/h      2    1
+430 E. Chain: stor. net inj. marg. co$/UE/h     3    1
+432 Renewable available capacity scenMW         0    0
+433 Stored energy by reserv. set (%) %          2    0
+434 Thermal non-exclusive joint res. MW         2    0
+435 Hydro non-exclusive joint res.   MW         2    0
+436 Battery non-exclusive joint res. MW         2    0
+437 Generic int. ctr. violation      unit       7    0
+438 Generic int. ctr. violation cost k$         8    0
+439 CSP Generation                   MWh        2    0
+440 CSP storage                      MWh        2    0
+441 CSP storage marginal cost        $/MWh      3    0
+442 Marginal value of stored heat    $/MWh      3    0
+443 CSP charge                       MWh        2    0
+444 CSP discharge                    MWh        2    0
+445 CSP capacity marginal cost       $/MW       3    0
+446 Dynamic line rating              pu         0    0
+447 Interconnection joint reserve    MW         2    0
+450 Thermal c.c. state               0/1        2    0
+457 Energy lost by spillage          GWh        2    0
+482 Renewable generator group generatGWh        2    0
+485 Emission budget violation        unit       7    0
+490 CSP joint reserve                MW         2    0
+491 CSP non-exclusive joint reserve  MW         2    0
+493 Hydro tailwater elevation        m          2    0
+494 Total inflows                    m3/s       0    0
+528 Fuel contract min. offtake violatUC         7    0
+529 Fuel contract min. offtake violatk$         8    0
+532 Waterway flow                    m3/s       2    0
+533 Min. waterway flow viol.         m3/s       7    0
+534 Max. waterway flow viol.         m3/s       7    0
+535 Min. waterway flow viol. cost    k$         8    0
+536 Max. waterway flow viol. cost    k$         8    0
+541 Waterway marginal cost           k$/m3/s    3    0
+543 Thermal shutdown decision        0/1        2    0
+544 E. Chain.: demand deficit        UE         7    1
+549 Renewable joint reserve          MW         2    0
+550 Renewable non-exclusive joint resMW         2    0
+551 Renewable joint reserve cost     k$         1    0
+552 Battery O&M cost                 k$         1    0
+554 Available battery capacity       MW         0    0
+555 CSP scenario                     pu         0    0
+556 CSP capacity scenario            MW         0    0
+557 AC circuit losses error          MW         2    0
+563 Generic thermal emission unit cos$/MWh      0    0
+564 Generic thermal emission unit cos$/MWh      0    0
+565 Generic thermal emission unit cos$/MWh      0    0
+566 DC link losses error             MW         2    0
+569 Marginal value of battery energy k$/MWh     3    0
+570 Battery initial storage          MWh        2    0
+571 Battery joint reserve price      $/MWh      1    0
+572 Thermal maximum joint reserve    MW         1    0
+573 Thermal joint reserve price      $/MWh      1    0
+574 Hydro maximum joint reserve      MW         1    0
+575 Hydro joint reserve price        $/MWh      1    0
+576 Renewable maximum joint reserve  MW         1    0
+577 Renewable joint reserve price    $/MWh      1    0
+578 Battery maximum joint reserve    MW         1    0
+579 Battery single reserve           MW         2    0
+580 E. Chain: prod. generation       kUE        2    1
+581 E. Chain: prod. cost             k$         1    1
+582 E. Chain: prod. cap. marg. cost  k$/UE/d    3    1
+584 Fixed conv. used                 kUE        2    1
+586 Fixed conv. cost                 k$         1    1
+589 E. Chain: node marg. cost        k$/unit    3    1
+590 DC Link available capacity FROM->MW         0    0
+591 DC Link available capacity TO->FRMW         0    0
+592 Total gas emission               unit       2    0
+593 Shutdown cost                    k$         1    0
+594 AC interconnection transmission ck$         1    0
+596 Thermal generator group minimum gMW         2    0
+597 Renewable generation spillage notGWh        2    0
+598 Inflow due to upstream plants    m3/s       2    0
+599 Income of agents per exc. reservek$         1    0
+600 Turbinable spilled outflow       m3/s       2    0
+601 Fuel reservoir: thermal withdrawakUC        2    0
+602 Fuel reservoir: ToP contract injekUC        2    0
+603 Target storage                   hm3        2    0
+604 Fuel reservoir: Extra ToP contrackUC        2    0
+605 Generic variable cost            k$         1    0
+607 Hydro generator group commitment pu         2    0
+608 Viol. cost of min op. storage    k$         8    0
+609 Viol. cost of min alert storage  k$         8    0
+610 Min op. st. marginal cost        k$/hm3     3    0
+611 Alert storage marginal cost      k$/hm3     3    0
+612 Minimum outflow marginal cost    k$/m3/s    3    0
+613 Maximum outflow marginal cost    k$/m3/s    3    0
+614 Minimum spilled outflow marginal k$/m3/s    3    0
+615 Maximum spilled outflow marginal k$/m3/s    3    0
+616 Irrigation marginal cost         k$/m3/s    3    0
+617 Three winding transformer cap. mak$/MW      3    0
+618 Series capacitor cap. marg. cost k$/MW      3    0
+619 Transformer cap. marg. cost      k$/MW      3    0
+620 Transformers losses              MW         2    0
+621 Three winding transformers lossesMW         2    0
+622 Series capacitors losses         MW         2    0
+623 Transformers quadratic losses    MW         2    0
+624 Three winding transformers quadraMW         2    0
+625 Series capacitors quadratic losseMW         2    0
+626 Transformer losses error         MW         2    0
+627 Three winding transformers lossesMW         2    0
+628 Series capacitors losses error   MW         2    0
+629 AC transmission line flow        MW         2    0
+630 AC transmission line cap. marg. ck$/MW      3    0
+631 AC transmission line losses      MW         2    0
+632 AC transmission line quadratic loMW         2    0
+633 AC transmission lines losses erroMW         2    0
+634 Hydro generation offer           MWh        2    0
+635 Hydro generation offer cost      k$         1    0
+636 Thermal generation offer         MWh        2    0
+637 Thermal generation offer cost    k$         1    0
+638 Renewable generation offer       MWh        2    0
+639 Renewable generation offer cost  k$         1    0
+640 Outflow ramp-up marginal cost    k$/unit    3    0
+641 Outflow ramp-down marginal cost  k$/unit    3    0
+642 Turbining ramp-up marginal cost  k$/unit    3    0
+643 Turbining ramp-down marginal costk$/unit    3    0
+644 Spilling ramp-up marginal cost   k$/unit    3    0
+645 Spilling ramp-down marginal cost k$/unit    3    0
+647 Forebay ramp-up marginal cost    k$/m/h     3    0
+648 Forebay ramp-down marginal cost  k$/m/h     3    0
+649 Forebay daily ramp-up marginal cok$/m/d     3    0
+650 Forebay daily ramp-down marginal k$/m/d     3    0
+651 Generic lin. ctr. value          unit       2    0
+652 Cost of thermal ramp up          k$         8    0
+653 Cost of thermal ramp down        k$         8    0
+654 Energy efficiency applied        MWh        2    0
+655 Generic int. ctr. requirement    unit       2    0
+656 Generation ramp-up marginal cost k$/unit    3    0
+657 Generation ramp-down marginal cosk$/unit    3    0
+658 Minimum storage violation        hm3        7    0
+661 Battery cycles                   0          0    0
+664 Hydro controllable spillage violam3/s       1    0
+665 Hydro non controllable spillage vm3/s       1    0
+670 Minimum storage violation (typ. dhm3        7    0
+671 Minimum storage violation (typ. dhm3        7    0
+672 Inertia req. violation           MW.s       7    0
+673 Inertia req. viol. cost          k$         8    0
+676 Inertia marg. cost               k$/MW.s    3    0
+677 Hydro inertia provided           MW.s       2    0
+678 Thermal inertia provided         MW.s       2    0
+684 AC interconnection flow          GWh        2    0
+685 DC line flow                     GWh        2    0
+686 LCC converter flow               GWh        2    0
+687 VSC converter flow               GWh        2    0
+688 AC interconnection capacity FROM-MW         0    0
+689 DC line capacity FROM->TO        MW         0    0
+690 LCC converter capacity FROM->TO  MW         0    0
+691 VSC converter capacity FROM->TO  MW         0    0
+692 AC interconnection marginal cost k$/MW      3    0
+693 DC line marginal cost            k$/MW      3    0
+694 LCC converter marginal cost      k$/MW      3    0
+695 VSC converter marginal cost      k$/MW      3    0
+696 AC interconnection losses        MW         2    0
+697 DC line losses                   MW         2    0
+698 LCC converter losses             MW         2    0
+699 VSC converter losses             MW         2    0
+704 AC interconnection loading       %          2    0
+705 DC line loading                  %          2    0
+706 LCC converter loading            %          2    0
+707 VSC converter loading            %          2    0
+708 AC interconnection capacity TO->FMW         0    0
+709 DC line capacity TO->FROM        MW         0    0
+710 LCC converter capacity TO->FROM  MW         0    0
+711 VSC converter capacity TO->FROM  MW         0    0
+712 AC interconnection available capaMW         0    0
+713 DC line available capacity FROM->MW         0    0
+714 LCC converter available capacity MW         0    0
+715 VSC converter available capacity MW         0    0
+716 AC interconnection available capaMW         0    0
+717 DC line available capacity TO->FRMW         0    0
+718 LCC converter available capacity MW         0    0
+719 VSC converter available capacity MW         0    0
+720 AC transmission line loading     %          2    0
+721 Transformer loading              %          2    0
+722 Series capacitor loading         %          2    0
+723 Three winding transformer loading%          2    0

@@ -1,0 +1,11 @@
+$version=1
+!Code,Name,Existing,CapacityFactor,MinLevel
+2,Regaseificacao Bahia,0,1,0
+3,Regaseificacao Pecem,0,1,0
+4,Regaseificacao Sergipe,0,1,0
+5,Regaseificacao Acu,0,1,0
+6,Regaseificacao Santos,0,1,0
+7,Regaseificacao Babitonga (TGS),0,1,0
+8,Regaseificacao Barcarena,0,1,0
+9,Regaseificacao Suape,1,1,0
+1,Regaseificacao B. Guanabara,0,1,0
