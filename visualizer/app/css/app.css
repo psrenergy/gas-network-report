@@ -769,3 +769,11 @@ select.gsel-native { display: none !important; }
 #dock-left > .lyr-flyout.in-dock { right: 0; left: auto; border-left: 1px solid var(--line); border-right: 0; }
 #dock-right > .lyr-flyout.in-dock { left: 0; right: auto; border-right: 1px solid var(--line); border-left: 0; }
 .lyr-flyout[hidden] { display: none !important; }
+
+#tooltip { pointer-events: none; }
+
+/* toast with an Undo button */
+.toast.undo { display: flex; align-items: center; gap: 12px; pointer-events: auto; }
+.toast.undo button { border: 0; background: rgba(255,255,255,.14); color: #fff; border-radius: var(--radius-md); padding: 3px 9px; cursor: pointer; font: inherit; font-weight: 600; display: inline-flex; gap: 6px; align-items: center; }
+.toast.undo button:hover { background: rgba(255,255,255,.26); }
+.cm-item i { width: 16px; text-align: center; margin-right: 6px; color: var(--muted); }

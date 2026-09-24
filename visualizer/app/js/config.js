@@ -223,7 +223,10 @@ GV.config = {
       { id: 'pathTo', label: 'Find path to…' },
       { sep: true },
       { id: 'copyId', label: 'Copy ID' },
-      { id: 'center', label: 'Center map here' }
+      { id: 'center', label: 'Center map here' },
+      { sep: true },
+      { id: 'hide', label: 'Hide', icon: 'fa-eye-slash' },
+      { id: 'hideWithArcs', label: 'Hide with its direct connections (pipelines)', icon: 'fa-diagram-project' }
     ],
     arc: [
       { id: 'details', label: 'View details' },
@@ -234,13 +237,17 @@ GV.config = {
       { id: 'compareWith', label: 'Compare with…' },
       { sep: true },
       { id: 'copyId', label: 'Copy ID' },
-      { id: 'zoomTo', label: 'Zoom to pipeline' }
+      { id: 'zoomTo', label: 'Zoom to pipeline' },
+      { sep: true },
+      { id: 'hide', label: 'Hide', icon: 'fa-eye-slash' }
     ],
     asset: [
       { id: 'details', label: 'View details' },
       { id: 'timeseries', label: 'Open time series' },
       { id: 'parentNode', label: 'Select node' },
-      { id: 'copyId', label: 'Copy ID' }
+      { id: 'copyId', label: 'Copy ID' },
+      { sep: true },
+      { id: 'hide', label: 'Hide', icon: 'fa-eye-slash' }
     ]
   }
 };

@@ -45,9 +45,20 @@
   CH.gc = function () {
     live = live.filter(function (x) {
       if (document.body.contains(x.el)) return true;
+      x.inst.dispatchAction({ type: 'hideTip' });
       x.ro.disconnect(); x.inst.dispose(); return false;
     });
   };
+  // chart tooltips are attached to <body>: hide them as soon as the pointer is no longer over their chart
+  document.addEventListener('mousemove', function (e) {
+    live.forEach(function (x) {
+      var over = x.el.contains(e.target);
+      if (x.over && !over) x.inst.dispatchAction({ type: 'hideTip' });
+      x.over = over;
+    });
+  }, true);
+  window.addEventListener('blur', function () { live.forEach(function (x) { x.over = false; x.inst.dispatchAction({ type: 'hideTip' }); }); });
+  document.addEventListener('scroll', function () { live.forEach(function (x) { x.inst.dispatchAction({ type: 'hideTip' }); }); }, true);
 
   function axisStyle(extra) {
     var t = th();

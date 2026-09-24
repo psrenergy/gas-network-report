@@ -20,6 +20,14 @@
   var MONTHS = { Jan: 'jan', Feb: 'fev', Mar: 'mar', Apr: 'abr', May: 'mai', Jun: 'jun', Jul: 'jul', Aug: 'ago', Sep: 'set', Oct: 'out', Nov: 'nov', Dec: 'dez' };
 
   var DICT = {
+    "Hide": "Ocultar",
+    "Hide with its direct connections (pipelines)": "Ocultar com suas conexões diretas (dutos)",
+    "Hidden": "Ocultado",
+    "Already hidden": "Já está oculto",
+    "Hidden elements are visible again": "Os elementos ocultos voltaram a aparecer",
+    "Undo": "Desfazer",
+    "connection": "conexão",
+    "connections": "conexões",
     "shown on the map": "exibidos no mapa",
     "Show / hide all listed elements": "Mostrar / ocultar todos os elementos listados",
     "All shown": "Todos exibidos",
@@ -323,6 +331,8 @@
   };
   var UNIT_HINT = /(m³|%|\$|km|k\$|\bh\b|px|MMBtu)/;
   var RULES = [
+    [/^Hide selected \((\d+)\)$/, function (m) { return 'Ocultar selecionados (' + m[1] + ')'; }],
+    [/^Show hidden elements \((\d+)\)$/, function (m) { return 'Mostrar elementos ocultos (' + m[1] + ')'; }],
     [/^Select all \((\d+)\)$/, function (m) { return 'Selecionar todos (' + m[1] + ')'; }],
     [/^Showing the first (\d+)\. Refine the search to see more\.$/, function (m) { return 'Mostrando os primeiros ' + m[1] + '. Refine a busca para ver mais.'; }],
     [/^(\d+) of (\d+) pipelines follow the real route; the others are drawn straight\.$/, function (m) { return m[1] + ' de ' + m[2] + ' gasodutos seguem o traçado real; os demais são desenhados em reta.'; }],

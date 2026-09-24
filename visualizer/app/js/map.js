@@ -269,6 +269,7 @@
     placeOverlays(true);
     updateAnimation();
     if (M.onRender) M.onRender(builds);
+    if (M.recheckHover) M.recheckHover();   // the element under a still pointer may have changed
   };
   M.builds = function () { return builds; };
 
@@ -514,26 +515,41 @@
   function bindInteractions() {
     var canvas = map.getCanvasContainer();
     var boxStart = null, boxEl = null, suppressClick = false;
-    // Hover tooltip. The pointer can leave the map between a mousemove and its (throttled) handling,
-    // so the handler checks that the pointer is still over the map, and several events hide it.
-    var inside = false, dragging = false;
-    function clearHover() { setHover(null); GV.tooltip.hide(); }
-    var onMove = U.rafThrottle(function (e) {
-      if (boxStart || !inside || dragging) { GV.tooltip.hide(); return; }
-      var h = pickAt(e.point);
+    // Hover tooltip. The map can also change under a still pointer (keyboard pan/zoom, fly-to, new period,
+    // panels resizing the map, overlays opening), so every such change re-checks what is really under the
+    // last pointer position, and a watchdog does the same while a tooltip is visible.
+    var inside = false, dragging = false, last = null;   // last = client coordinates of the pointer
+    function clearHover() { setHover(null); GV.tooltip.hide(); map.getCanvas().style.cursor = st.get('pick') ? 'crosshair' : ''; }
+    function update(clientX, clientY, ev) {
+      if (boxStart || !inside || dragging) { clearHover(); return; }
+      // the pointer must still be on the map canvas itself, not on an overlay, panel, popup or menu above it
+      var top = document.elementFromPoint(clientX, clientY);
+      if (!top || !canvas.contains(top)) { clearHover(); return; }
+      var r = map.getCanvas().getBoundingClientRect();
+      var h = pickAt({ x: clientX - r.left, y: clientY - r.top });
       setHover(h);
       map.getCanvas().style.cursor = h ? 'pointer' : (st.get('pick') ? 'crosshair' : '');
-      if (h && st.get('tooltips') !== false) GV.tooltip.show(h, e.originalEvent); else GV.tooltip.hide();
-    });
-    map.on('mousemove', function (e) { inside = true; onMove(e); });
+      if (h && st.get('tooltips') !== false) GV.tooltip.show(h, ev || { clientX: clientX, clientY: clientY }); else GV.tooltip.hide();
+    }
+    var onMove = U.rafThrottle(function (e) { update(e.originalEvent.clientX, e.originalEvent.clientY, e.originalEvent); });
+    var recheck = U.rafThrottle(function () { if (inside && last) update(last.x, last.y); else if (hover || GV.tooltip.visible()) clearHover(); });
+    M.recheckHover = recheck;
+    map.on('mousemove', function (e) { inside = true; last = { x: e.originalEvent.clientX, y: e.originalEvent.clientY }; onMove(e); });
     map.on('mouseout', function () { inside = false; clearHover(); });
     canvas.addEventListener('mouseleave', function () { inside = false; clearHover(); });
     map.on('dragstart', function () { dragging = true; clearHover(); });
-    map.on('dragend', function () { dragging = false; });
-    map.on('zoomstart', function () { GV.tooltip.hide(); });
+    map.on('dragend', function () { dragging = false; recheck(); });
+    map.on('movestart', function () { if (!dragging) GV.tooltip.hide(); });
+    map.on('moveend', recheck);
+    map.on('resize', recheck);
     map.on('click', function () { GV.tooltip.hide(); });
-    document.addEventListener('mousemove', function (e) { if (!canvas.contains(e.target)) { if (inside) { inside = false; clearHover(); } else GV.tooltip.hide(); } }, true);
+    canvas.addEventListener('mousedown', function () { GV.tooltip.hide(); });
+    canvas.addEventListener('contextmenu', clearHover);
+    document.addEventListener('mousemove', function (e) { if (!canvas.contains(e.target)) { if (inside) { inside = false; clearHover(); } else if (GV.tooltip.visible()) GV.tooltip.hide(); } }, true);
     window.addEventListener('blur', clearHover);
+    document.addEventListener('visibilitychange', function () { if (document.hidden) clearHover(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clearHover(); });
+    setInterval(function () { if (GV.tooltip.visible() || hover) recheck(); }, 400);
     map.on('click', function (e) {
       if (suppressClick) { suppressClick = false; return; }
       var h = pickAt(e.point);

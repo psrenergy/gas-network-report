@@ -19,6 +19,7 @@
     el.style.left = x + 'px'; el.style.top = y + 'px';
   };
   T.hide = function () { var el = U.$('#tooltip'); if (el) el.hidden = true; };
+  T.visible = function () { var el = U.$('#tooltip'); return !!(el && !el.hidden); };
 
   function refHtml(hit) {
     var p = hit.ref.properties, l = hit.layer, it = GV.layers.items(l, A.current()).filter(function (x) { return x.id === p.eid; })[0];
@@ -247,13 +248,15 @@
     menu.appendChild(h('div.cm-title', c.typeLabel(kind, el) + ': ' + el.name));
     items.forEach(function (it) {
       if (it.sep) { menu.appendChild(h('div.cm-sep')); return; }
-      menu.appendChild(h('button.cm-item', { onclick: function () { CM.hide(); GV.actions.run(it.id, kind, id); } }, it.label));
+      menu.appendChild(h('button.cm-item', { onclick: function () { CM.hide(); GV.actions.run(it.id, kind, id); } }, it.icon ? h('i.fa-solid.' + it.icon) : null, it.label));
     });
     if (multi) {
       menu.appendChild(h('div.cm-sep'));
       menu.appendChild(h('button.cm-item', { onclick: function () { CM.hide(); GV.ui.openCompareSelection(); } }, 'Compare selected (' + st.get('selection').length + ')'));
       menu.appendChild(h('button.cm-item', { onclick: function () { CM.hide(); GV.actions.subsetFromSelection(); } }, 'Filter to selection'));
+      menu.appendChild(h('button.cm-item', { onclick: function () { CM.hide(); ACT.hideSelection(); } }, h('i.fa-solid.fa-eye-slash'), 'Hide selected (' + st.get('selection').length + ')'));
     }
+    unhideItem(menu);
     place(menu, ev);
   };
   CM.showMap = function (ev, lngLat) {
@@ -264,6 +267,7 @@
       ['Clear selection & highlight', function () { st.set({ selection: [], highlight: null }); }],
       ['Copy coordinates', function () { U.copy(lngLat.lat.toFixed(5) + ', ' + lngLat.lng.toFixed(5)); }]
     ].forEach(function (p) { menu.appendChild(h('button.cm-item', { onclick: function () { CM.hide(); p[1](); } }, p[0])); });
+    unhideItem(menu);
     place(menu, ev);
   };
   document.addEventListener('mousedown', function (e) { var m = U.$('#ctxmenu'); if (m && !m.hidden && !m.contains(e.target)) CM.hide(); });
@@ -276,8 +280,71 @@
     }
   });
 
+  /** "Show hidden elements (n)" entry, when elements were hidden one by one in any layer. */
+  function unhideItem(menu) {
+    var n = ACT.hiddenCount(); if (!n) return;
+    menu.appendChild(h('div.cm-sep'));
+    menu.appendChild(h('button.cm-item', { onclick: function () { CM.hide(); ACT.unhideAll(); } }, h('i.fa-solid.fa-eye'), 'Show hidden elements (' + n + ')'));
+  }
+
   // ======================= actions =======================
   var ACT = GV.actions = {};
+
+  // ---- hide elements from the map (per layer, see layer.hidden); undo and "show hidden" are available ----
+  /** targets: { nodes: [ids], arcs: [ids], assets: [ids] }. Hides them in every layer that draws them;
+   *  hiding a node also hides the asset symbols drawn at that node. */
+  ACT.hideElements = function (targets, label) {
+    var c = A.current(); if (!c) return;
+    var nodes = new Set(targets.nodes || []), arcs = new Set(targets.arcs || []), assets = new Set(targets.assets || []);
+    var before = st.get('layerList') || [], changed = 0;
+    var list = before.map(function (l) {
+      if (l.type === 'ref') return l;
+      var ids = [];
+      if (l.type === 'arc') arcs.forEach(function (id) { ids.push(id); });
+      else if (l.type === 'node') nodes.forEach(function (id) { ids.push(id); });
+      else if (l.type === 'asset') {
+        if (l.aggregate === 'each') c.assets.forEach(function (x) { if (assets.has(x.id) || nodes.has(x.node)) ids.push(x.id); });
+        else nodes.forEach(function (id) { ids.push(id); });
+      }
+      if (!ids.length) return l;
+      var cur = new Set(l.hidden || []), n0 = cur.size;
+      ids.forEach(function (id) { cur.add(id); });
+      if (cur.size === n0) return l;
+      changed++;
+      return Object.assign({}, l, { hidden: Array.from(cur) });
+    });
+    if (!changed) { U.toast(GV.t('Already hidden')); return; }
+    st.set({ layerList: list, view: 'custom' });
+    var sel = st.get('selection').filter(function (s) { return !(s.kind === 'node' && nodes.has(s.id)) && !(s.kind === 'arc' && arcs.has(s.id)) && !(s.kind === 'asset' && assets.has(s.id)); });
+    if (sel.length !== st.get('selection').length) st.set({ selection: sel });
+    if (GV.popup && GV.popup.close) GV.popup.close();
+    undoToast(label, before);
+  };
+  ACT.hiddenCount = function () {
+    var ids = new Set();
+    (st.get('layerList') || []).forEach(function (l) { (l.hidden || []).forEach(function (id) { ids.add(id); }); });
+    return ids.size;
+  };
+  ACT.unhideAll = function () {
+    var before = st.get('layerList') || [];
+    st.set({ layerList: before.map(function (l) { return l.hidden && l.hidden.length ? Object.assign({}, l, { hidden: [] }) : l; }), view: 'custom' });
+    undoToast(GV.t('Hidden elements are visible again'), before);
+  };
+  ACT.hideSelection = function () {
+    var t = { nodes: [], arcs: [], assets: [] };
+    st.get('selection').forEach(function (s) { (s.kind === 'node' ? t.nodes : s.kind === 'arc' ? t.arcs : t.assets).push(s.id); });
+    ACT.hideElements(t, GV.t('Hidden') + ': ' + (t.nodes.length + t.arcs.length + t.assets.length) + ' ' + GV.t('elements'));
+  };
+  /** Toast with an Undo button that restores the layer list as it was before the change. */
+  function undoToast(msg, before) {
+    var host = U.$('#toasts'); if (!host) return;
+    var t = h('div.toast.undo', h('span', msg),
+      h('button', { onclick: function () { st.set({ layerList: before, view: 'custom' }); t.remove(); } }, h('i.fa-solid.fa-rotate-left'), GV.t('Undo')));
+    host.appendChild(t);
+    setTimeout(function () { t.classList.add('out'); }, 6000);
+    setTimeout(function () { t.remove(); }, 6500);
+  }
+
   ACT.drill = function (kind, id) {
     GV.map.flyToElement(kind, id, { zoom: 7.5 });
     GV.ui.openProps(kind === 'arc' ? 'results' : 'results');
@@ -330,6 +397,14 @@
         var nb = c.trace([ni], 1, F);
         nb.nodes[id] = true;
         addFilter({ id: 'f-sub', type: 'subset', label: 'Network from ' + el.name, nodes: nb.nodes, arcs: nb.arcs });
+        break;
+      }
+      case 'hide':
+        ACT.hideElements(kind === 'node' ? { nodes: [id] } : kind === 'arc' ? { arcs: [id] } : { assets: [id] }, GV.t('Hidden') + ': ' + el.name);
+        break;
+      case 'hideWithArcs': {
+        var arcIds = c.nodeArcs[ni].map(function (ai) { return c.arcs[ai].id; });
+        ACT.hideElements({ nodes: [id], arcs: arcIds }, GV.t('Hidden') + ': ' + el.name + ' + ' + arcIds.length + ' ' + GV.t(arcIds.length === 1 ? 'connection' : 'connections'));
         break;
       }
       case 'copyId': U.copy(id); break;
